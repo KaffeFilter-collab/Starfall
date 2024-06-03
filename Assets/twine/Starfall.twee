@@ -1,0 +1,26 @@
+:: StoryTitle
+Starfall
+
+
+:: StoryData
+{
+  "ifid": "A98436BB-396B-4738-91D0-17D29F2BC797",
+  "format": "Harlowe",
+  "format-version": "3.3.8",
+  "start": "Start",
+  "zoom": 1
+}
+
+
+:: Nuh Uh {"position":"1025,500","size":"100,100"}
+No
+
+
+:: Start {"position":"900,400","size":"100,100"}
+Do you wanna kill yourself?
+[[Link to another passage->Yes]]
+[[Link to another passage->Nuh Uh]]
+
+
+:: Yes {"position":"1025,275","size":"100,100"}
+Yes
