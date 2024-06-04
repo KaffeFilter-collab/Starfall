@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/NormalIngameUI.uss?fileID=7433441132597879392&amp;guid=0592f4f636b29f241818d2a47b7474ad&amp;type=3#NormalIngameUI" />
+    <ui:VisualElement class="buttonContainer" style="flex-grow: 1;">
+        <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Resume" style="left: 40%; top: 35%; width: 20%; height: 10%;" />
+        <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Quit" style="width: 20%; height: 10%; border-top-width: 3px; border-right-width: 3px; border-bottom-width: 3px; border-left-width: 3px; left: 40%; top: 60%;" />
+    </ui:VisualElement>
+</ui:UXML>

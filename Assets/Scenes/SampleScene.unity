@@ -277,6 +277,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiDocument: {fileID: 1707217242}
+  standartOverlay: {fileID: 9197481963319205126, guid: 983889c440a5ab44abe5df598ed45495, type: 3}
+  inventory: {fileID: 9197481963319205126, guid: d3f1cb0c5a72a6c478028e367fed6da0, type: 3}
+  menu: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
