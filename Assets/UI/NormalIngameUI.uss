@@ -1,2 +1,17 @@
 .buttonContainer {
+    top: 100%;
+}
+
+.inventoryButton {
+    background-image: url('project://database/Assets/Sprites/InGameUI/InventoryButtonInGame.png?fileID=21300000&guid=dcedd1ee4f0e0434f8408f0935aa794b&type=3#InventoryButtonInGame');
+}
+
+.menuButton {
+    background-image: url('project://database/Assets/Sprites/InGameUI/MenuButtonInGame.png?fileID=21300000&guid=186cd6e4ff591414a9bf3568b445a682&type=3#MenuButtonInGame');
+}
+
+.resumeButton {
+}
+
+.quitButton {
 }

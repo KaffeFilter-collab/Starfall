@@ -1,0 +1,11 @@
+.newGameButton {
+    background-image: url('project://database/Assets/Sprites/MainMenuUI/WithColor/NewGame.png?fileID=21300000&guid=e946e8fbe46055948ba30d985697092e&type=3#NewGame');
+}
+
+.settingButton {
+    background-image: url('project://database/Assets/Sprites/MainMenuUI/WithColor/Options.png?fileID=21300000&guid=1918b9d7a2f5acf439a998daf20e7952&type=3#Options');
+}
+
+.quitButton {
+    background-image: url('project://database/Assets/Sprites/MainMenuUI/WithColor/ExitGame.png?fileID=21300000&guid=6eb8831e2d686a743a901fe5ea29f4c7&type=3#ExitGame');
+}
