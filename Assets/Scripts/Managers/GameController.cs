@@ -34,12 +34,11 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        PopulateDatabase();
+        //PopulateDatabase();
     }
 
     private void Start()
     {
-        //Add the ItemDatabase to the players inventory and let the UI know that some items have been picked up
         m_PlayerInventory.AddRange(m_ItemDatabase.Values);
         OnInventoryChanged.Invoke(m_PlayerInventory.Select(x=> x.GUID).ToArray(), InventoryChangeType.Pickup);
     }
@@ -51,9 +50,9 @@ public class GameController : MonoBehaviour
     {
         m_ItemDatabase.Add("8B0EF21A-F2D9-4E6F-8B79-031CA9E202BA", new ItemDetails()
         {
-            Name = "History of the Syndicate: 1501 to 1825 ",
+            Name = "OxygenPlant",
             GUID = "8B0EF21A-F2D9-4E6F-8B79-031CA9E202BA",
-            Icon = IconSprites.FirstOrDefault(x => x.name.Equals("syndicate")),
+            Icon = IconSprites.FirstOrDefault(x => x.name.Equals("prototyping_noteWallLeoRoommitCode")),
             CanDrop = false
         });
 
@@ -86,8 +85,22 @@ public class GameController : MonoBehaviour
         {
             return m_ItemDatabase[guid];
         }
-
+    
         return null;
+    }
+    public static void AddItemToDatabase(ItemDetails item)
+    {
+        if (!m_ItemDatabase.ContainsKey(item.GUID))
+        {
+            m_ItemDatabase.Add(item.GUID, item);
+            Debug.Log("Item {item.Name} added to the database.");
+            OnInventoryChanged?.Invoke(new string[] { item.GUID }, InventoryChangeType.Pickup);
+            Debug.Log(new string[] { item.GUID });
+        }
+        else
+        {
+            Debug.Log("already exists");
+        }
     }
 
 }

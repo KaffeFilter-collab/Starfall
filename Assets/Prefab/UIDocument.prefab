@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PanelSettings: {fileID: 11400000, guid: 994547cef1b038c429d05604540e8d9f, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: 3f4606f5dd4689d4c81c9f57f9741142, type: 3}
+  sourceAsset: {fileID: 9197481963319205126, guid: 4d4137a83c9ec92478cbd61ecc0b738e, type: 3}
   m_SortingOrder: 0
 --- !u!114 &550660012737308976
 MonoBehaviour:
@@ -75,5 +75,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b1e8ac6521056f4a90246f0d4f1cb6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IconSprites:
-  - {fileID: 21300000, guid: 1c85465f069b76e49ba7f1896f9ab8ab, type: 3}
+  IconSprites: []

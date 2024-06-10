@@ -149,6 +149,7 @@ namespace Managers
         
         private void OnQuitButtonClicked()
         {
+            ChangePanel(UiEnum.MainMenu);
             SceneManager.LoadScene(0);
         }
 
@@ -159,11 +160,18 @@ namespace Managers
         public void GetMainMenuRefrences()
         {
             Panels[(int)UiEnum.MainMenu].Q<Button>("NewGame").clicked += StartNewGame;
+            Panels[(int)UiEnum.MainMenu].Q<Button>("Quit").clicked += EndGame;
         }
 
         public void StartNewGame()
         {
-            
+            ChangePanel(UiEnum.NormalGame);
+            SceneManager.LoadScene(1);
+        }
+
+        public void EndGame()
+        {
+            Application.Quit();
         }
 
         #endregion

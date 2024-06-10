@@ -397,6 +397,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dd7284fa1ed68d41bf6fdbad15c205c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameController: {fileID: 0}
+  IconSprites: []
 --- !u!61 &1616911178
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -442,80 +444,10 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1001 &4654364449474204814
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 550660012737308976, guid: 2edeeb5b63a21e94aae5ff8da380ac72, type: 3}
-      propertyPath: StartPanel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 747466999612978119, guid: 2edeeb5b63a21e94aae5ff8da380ac72, type: 3}
-      propertyPath: m_Name
-      value: UIDocument
-      objectReference: {fileID: 0}
-    - target: {fileID: 6336880799926571697, guid: 2edeeb5b63a21e94aae5ff8da380ac72, type: 3}
-      propertyPath: sourceAsset
-      value: 
-      objectReference: {fileID: 9197481963319205126, guid: 4d4137a83c9ec92478cbd61ecc0b738e, type: 3}
-    - target: {fileID: 6726022477347202894, guid: 2edeeb5b63a21e94aae5ff8da380ac72, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6726022477347202894, guid: 2edeeb5b63a21e94aae5ff8da380ac72, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6726022477347202894, guid: 2edeeb5b63a21e94aae5ff8da380ac72, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6726022477347202894, guid: 2edeeb5b63a21e94aae5ff8da380ac72, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6726022477347202894, guid: 2edeeb5b63a21e94aae5ff8da380ac72, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6726022477347202894, guid: 2edeeb5b63a21e94aae5ff8da380ac72, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6726022477347202894, guid: 2edeeb5b63a21e94aae5ff8da380ac72, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6726022477347202894, guid: 2edeeb5b63a21e94aae5ff8da380ac72, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6726022477347202894, guid: 2edeeb5b63a21e94aae5ff8da380ac72, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6726022477347202894, guid: 2edeeb5b63a21e94aae5ff8da380ac72, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8145522358073535209, guid: 2edeeb5b63a21e94aae5ff8da380ac72, type: 3}
-      propertyPath: IconSprites.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2edeeb5b63a21e94aae5ff8da380ac72, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
-  - {fileID: 4654364449474204814}
   - {fileID: 528672511}
   - {fileID: 1616911175}
