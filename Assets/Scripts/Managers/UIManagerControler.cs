@@ -1,10 +1,11 @@
+using System;
 using System.Collections.Generic;
 using Assets.Scripts;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using System.Linq;
-
+using Unity.VisualScripting;
 
 
 namespace Managers
@@ -13,12 +14,20 @@ namespace Managers
     {
 
         public static UIManagerControler Instance { get; private set; }
-        public UIDocument uiDocument;
+        private UIDocument uiDocument;
+        private VisualElement root;
+        private UiEnum CurrentPanel;
+        [SerializeField] private UiEnum StartPanel;
+        
+        //Ui enum
+        public enum UiEnum
+        {
+            MainMenu,
+            NormalGame,
+            PauseMenu
+        }
 
-        [SerializeField] private VisualTreeAsset standartOverlay;
-        [SerializeField] private VisualTreeAsset inventory;
-        [SerializeField] private VisualTreeAsset menu;
-
+        private List<VisualElement> Panels;
         private void Awake()
         {
             if (Instance is not null)
@@ -29,10 +38,17 @@ namespace Managers
 
             Instance = this;
             DontDestroyOnLoad(this);
+            //End of thingy
+            
+            
             uiDocument = GetComponent<UIDocument>();
+            root = uiDocument.rootVisualElement;
+            GetSetupPanels();
+            GetMainMenuRefrences();
             GetInventoryRefrences();
             GetSettingsRefrences();
-            GetInInventoryCodeRefrences();
+            GetInSettingsRefrences();
+            ChangePanel(StartPanel);
         }
 
         private void OnDestroy()
@@ -40,12 +56,15 @@ namespace Managers
             if (Instance == this) Instance = null;
         }
 
-        public bool CheckCurrentUI(VisualTreeAsset check)
-        {
-            if (uiDocument.visualTreeAsset == check) return true;
-            return false;
+        private void GetSetupPanels() {
+            Panels = root.Query<VisualElement>(className: "panel").ToList();
         }
 
+        public void ChangePanel(UiEnum newUI) {
+            Panels[(int)CurrentPanel].style.display = DisplayStyle.None;
+            Panels[(int) newUI].style.display = DisplayStyle.Flex;
+            CurrentPanel = newUI;
+        }
         #region Timerbar
 
 
@@ -54,142 +73,97 @@ namespace Managers
 
         #region Inventory
 
-        private const string N_Inventorybutton = "Inventory";
-        private Button inventoryButton;
-
-        //In inventory
-        private const string N_InventoryInInventoryButton = "InventoryInInventory";
-        private Button inventoryInInventoryButton;
-
+        private VisualElement inventory;
+        
         public void GetInventoryRefrences()
         {
-            inventoryButton = uiDocument.rootVisualElement.Q<Button>(N_Inventorybutton);
-            inventoryButton.clicked += InventoryButtonOnClicked;
-        }
-
-        public void GetInInventoryRefrences()
-        {
-            inventoryInInventoryButton = uiDocument.rootVisualElement.Q<Button>(N_InventoryInInventoryButton);
-            inventoryInInventoryButton.clicked += InventoryInInventoryButtonOnClicked;
-        }
-
-        private void InventoryButtonOnClicked()
-        {
-            Debug.Log("button works");
-            InventoryToggle();
-        }
-
-        private void InventoryInInventoryButtonOnClicked()
-        {
-            InventoryToggle();
-        }
-
-
-        public void InventoryToggle()
-        {
-            if (CheckCurrentUI(inventory))
-            {
-                uiDocument.visualTreeAsset = standartOverlay;
-                GetInventoryRefrences();
-                GetSettingsRefrences();
-            }
-            else
-            {
-                uiDocument.visualTreeAsset = inventory;
-                GetInInventoryRefrences();
-                GetSettingsRefrences();
-            }
-        }
-
-        #region InInventoryCode
-
-        public List<InventorySlot> InventoryItems = new List<InventorySlot>();
-        private VisualElement m_Root;
-        private VisualElement m_SlotContainer;
-        private static VisualElement m_GhostIcon;
-
-        private void GetInInventoryCodeRefrences()
-        {
-            m_Root = GetComponent<UIDocument>().rootVisualElement;
-            m_GhostIcon = m_Root.Query<VisualElement>("GhostIcon");
-            m_SlotContainer = m_Root.Q<VisualElement>("SlotContainer");
+            inventory = Panels[(int)UiEnum.NormalGame].Q<VisualElement>("InventoryOverlay");
+            Panels[(int)UiEnum.NormalGame].Q<Button>("Inventory").clicked += InventoryToggle;
+            m_SlotContainer = Panels[(int)UiEnum.NormalGame].Q<VisualElement>(className:"slotsContainer");
             GameController.OnInventoryChanged += OnInventoryChanged;
             for (int i = 0; i < 20; i++)
             {
                 InventorySlot item = new InventorySlot();
                 InventoryItems.Add(item);
-                //m_SlotContainer.Add(item);
+                m_SlotContainer.Add(item);
             }
         }
+        
+        
+        public void InventoryToggle()
+        {
+            inventory.style.visibility = inventory.style.visibility == Visibility.Visible
+                ? Visibility.Hidden
+                : Visibility.Visible;
+        }
+
+        #region InInventoryCode
+
+        public List<InventorySlot> InventoryItems = new List<InventorySlot>();
+        private VisualElement m_SlotContainer;
+        
 
         public void OnInventoryChanged(string[] itemGuid, InventoryChangeType change)
+        {
+            Debug.Log("inventory is being changed");
+            //Loop through each item and if it has been picked up, add it to the next empty slot
+            foreach (string item in itemGuid)
             {
-                //Loop through each item and if it has been picked up, add it to the next empty slot
-                foreach (string item in itemGuid)
+                var emptySlot = InventoryItems.FirstOrDefault(x => x.ItemGuid.Equals(item));
+                
+                if (emptySlot != null)
                 {
-                    if (change == InventoryChangeType.Pickup)
-                    {
-                        var emptySlot = InventoryItems.FirstOrDefault(x => x.ItemGuid.Equals(""));
-                    
-                        if (emptySlot != null)
-                        {
-                            emptySlot.HoldItem(GameController.GetItemByGuid(item));
-                        }
-                    }
+                    emptySlot.HoldItem(GameController.GetItemByGuid(item));
+                    Debug.Log("error while changing");
                 }
             }
+        }
         
 
-    #endregion
+            #endregion
         #endregion
 
-        #region Settings
-
-        private const string N_SettingsButton = "Menu";
-        private Button settingsButton;
-        
-        //InSettings
-
-
-        private const string N_ResumeButton = "Resume";
-        private const string N_QuitButton = "Quit";
-        private const string N_inSettingsButton = "inSettingsButton";
-        private Button inSettingsButton;
-        private Button resumeButton;
-        private Button quitButton;
-        
+        #region PausMenu
         public void GetSettingsRefrences()
         {
-            settingsButton = uiDocument.rootVisualElement.Q<Button>(N_SettingsButton);
-            settingsButton.clicked +=OnSettingsButtonClicked ;
+            Panels[(int)UiEnum.NormalGame].Q<Button>("Menu").clicked += OnSettingsButtonClicked;
         }
 
         public void GetInSettingsRefrences()
         {
-            resumeButton = uiDocument.rootVisualElement.Q<Button>(N_ResumeButton);
-            resumeButton.clicked += OnSettingsButtonClicked;
-            quitButton = uiDocument.rootVisualElement.Q<Button>(N_QuitButton);
-            quitButton.clicked += OnQuitButtonClicked;
+            Panels[(int)UiEnum.PauseMenu].Q<Button>("Resume").clicked += OnSettingsButtonClicked;
+            Panels[(int)UiEnum.PauseMenu].Q<Button>("Quit").clicked += OnQuitButtonClicked; 
         }
 
         private void OnSettingsButtonClicked()
         {
-            if (CheckCurrentUI(menu))
+            if (CurrentPanel != UiEnum.PauseMenu)
             {
-                uiDocument.visualTreeAsset = standartOverlay;
-                GetSettingsRefrences();
-                GetInventoryRefrences();
+                ChangePanel(UiEnum.PauseMenu);
             }
             else
             {
-                uiDocument.visualTreeAsset = menu;
-                GetInSettingsRefrences();
+                ChangePanel(UiEnum.NormalGame);
             }
         }
         
         private void OnQuitButtonClicked()
         {
             SceneManager.LoadScene(0);
+        }
+
+        #endregion
+
+        #region MainMenu
+
+        public void GetMainMenuRefrences()
+        {
+            Panels[(int)UiEnum.MainMenu].Q<Button>("NewGame").clicked += StartNewGame;
+        }
+
+        public void StartNewGame()
+        {
+            
         }
 
         #endregion

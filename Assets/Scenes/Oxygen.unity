@@ -450,10 +450,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 550660012737308976, guid: 2edeeb5b63a21e94aae5ff8da380ac72, type: 3}
+      propertyPath: StartPanel
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 747466999612978119, guid: 2edeeb5b63a21e94aae5ff8da380ac72, type: 3}
       propertyPath: m_Name
       value: UIDocument
       objectReference: {fileID: 0}
+    - target: {fileID: 6336880799926571697, guid: 2edeeb5b63a21e94aae5ff8da380ac72, type: 3}
+      propertyPath: sourceAsset
+      value: 
+      objectReference: {fileID: 9197481963319205126, guid: 4d4137a83c9ec92478cbd61ecc0b738e, type: 3}
     - target: {fileID: 6726022477347202894, guid: 2edeeb5b63a21e94aae5ff8da380ac72, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -492,6 +500,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6726022477347202894, guid: 2edeeb5b63a21e94aae5ff8da380ac72, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8145522358073535209, guid: 2edeeb5b63a21e94aae5ff8da380ac72, type: 3}
+      propertyPath: IconSprites.Array.size
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

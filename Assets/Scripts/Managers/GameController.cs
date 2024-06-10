@@ -72,7 +72,7 @@ public class GameController : MonoBehaviour
             Icon = IconSprites.FirstOrDefault(x => x.name.Equals("poison")),
             CanDrop = true
         });
-
+        Debug.Log("datbase populated");
     }
 
     /// <summary>

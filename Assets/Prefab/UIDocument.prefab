@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6726022477347202894}
   - component: {fileID: 6336880799926571697}
   - component: {fileID: 550660012737308976}
+  - component: {fileID: 8145522358073535209}
   m_Layer: 5
   m_Name: UIDocument
   m_TagString: Untagged
@@ -47,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PanelSettings: {fileID: 11400000, guid: 994547cef1b038c429d05604540e8d9f, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: 983889c440a5ab44abe5df598ed45495, type: 3}
+  sourceAsset: {fileID: 9197481963319205126, guid: 3f4606f5dd4689d4c81c9f57f9741142, type: 3}
   m_SortingOrder: 0
 --- !u!114 &550660012737308976
 MonoBehaviour:
@@ -61,7 +62,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac407a809a70dd44ad76dbae8c21cf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiDocument: {fileID: 6336880799926571697}
-  standartOverlay: {fileID: 9197481963319205126, guid: 983889c440a5ab44abe5df598ed45495, type: 3}
-  inventory: {fileID: 9197481963319205126, guid: 398c6f54d2157db49b2b77bd35f612fe, type: 3}
-  menu: {fileID: 9197481963319205126, guid: 89bd44e53cd12204297310423e83fd23, type: 3}
+  StartPanel: 0
+--- !u!114 &8145522358073535209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747466999612978119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b1e8ac6521056f4a90246f0d4f1cb6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IconSprites:
+  - {fileID: 21300000, guid: 1c85465f069b76e49ba7f1896f9ab8ab, type: 3}
