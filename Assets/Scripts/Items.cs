@@ -17,6 +17,7 @@ public class Items : MonoBehaviour
     {
         Debug.Log("yes");
         StartCoroutine(GotoInventory());
+        
     }
 
     IEnumerator GotoInventory()

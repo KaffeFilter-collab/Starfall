@@ -113,7 +113,7 @@ namespace Managers
             m_Root = GetComponent<UIDocument>().rootVisualElement;
             m_GhostIcon = m_Root.Query<VisualElement>("GhostIcon");
             m_SlotContainer = m_Root.Q<VisualElement>("SlotContainer");
-            GameController.OnInventoryChanged += GameController_OnInventoryChanged;
+            GameController.OnInventoryChanged += OnInventoryChanged;
             for (int i = 0; i < 20; i++)
             {
                 InventorySlot item = new InventorySlot();
@@ -122,7 +122,7 @@ namespace Managers
             }
         }
 
-        public void GameController_OnInventoryChanged(string[] itemGuid, InventoryChangeType change)
+        public void OnInventoryChanged(string[] itemGuid, InventoryChangeType change)
             {
                 //Loop through each item and if it has been picked up, add it to the next empty slot
                 foreach (string item in itemGuid)
