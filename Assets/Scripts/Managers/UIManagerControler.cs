@@ -22,10 +22,13 @@ namespace Managers
         //Ui enum
         public enum UiEnum
         {
+            Enviorment,
             MainMenu,
             NormalGame,
             PauseMenu
         }
+        
+        
 
         private List<VisualElement> Panels;
         private void Awake()
@@ -65,6 +68,12 @@ namespace Managers
             Panels[(int) newUI].style.display = DisplayStyle.Flex;
             CurrentPanel = newUI;
         }
+
+        public void SetEnviorment(Texture2D texture)
+        {
+            Panels[(int)UiEnum.Enviorment].style.backgroundImage = new StyleBackground(texture);
+        }
+        
         #region Timerbar
 
 
@@ -107,14 +116,24 @@ namespace Managers
         {
             Debug.Log("inventory is being changed");
             //Loop through each item and if it has been picked up, add it to the next empty slot
+            int i = 0;
             foreach (string item in itemGuid)
             {
-                var emptySlot = InventoryItems.FirstOrDefault(x => x.ItemGuid.Equals(item));
-                
+                InventorySlot emptySlot = null;
+                foreach (var slot in InventoryItems)
+                {
+                    Debug.Log(item);
+                    if (slot.ItemGuid != null && slot.ItemGuid.Equals(""))
+                    {
+                        emptySlot = slot;
+                        break;
+                    }
+                }
+                Debug.Log(emptySlot);
+                i++;
                 if (emptySlot != null)
                 {
                     emptySlot.HoldItem(GameController.GetItemByGuid(item));
-                    Debug.Log("error while changing");
                 }
             }
         }

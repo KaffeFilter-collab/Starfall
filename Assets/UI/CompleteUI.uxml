@@ -1,8 +1,10 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="Enviorment" src="project://database/Assets/UI/Panels/Enviorment.uxml?fileID=9197481963319205126&amp;guid=70e855128dd4312469e7256550682eeb&amp;type=3#Enviorment" />
     <ui:Template name="MainMenu" src="project://database/Assets/UI/Panels/MainMenu.uxml?fileID=9197481963319205126&amp;guid=a8a6670e687121048b20cef06403a526&amp;type=3#MainMenu" />
     <ui:Template name="NormalGame" src="project://database/Assets/UI/Panels/NormalGame.uxml?fileID=9197481963319205126&amp;guid=398c6f54d2157db49b2b77bd35f612fe&amp;type=3#NormalGame" />
     <ui:Template name="Menu" src="project://database/Assets/UI/Panels/Menu.uxml?fileID=9197481963319205126&amp;guid=89bd44e53cd12204297310423e83fd23&amp;type=3#Menu" />
     <Style src="project://database/Assets/UI/CompletUI.uss?fileID=7433441132597879392&amp;guid=830e4ae8be484f049b338e4fba01f0ad&amp;type=3#CompletUI" />
+    <ui:Instance template="Enviorment" name="Enviorment" class="panel" style="position: absolute; width: 100%; height: 100%;" />
     <ui:Instance template="MainMenu" name="MainMenu" class="panel" style="display: none;" />
     <ui:Instance template="NormalGame" name="NormalGame" class="panel" style="display: none;" />
     <ui:Instance template="Menu" name="Menu" class="panel" style="display: none;" />

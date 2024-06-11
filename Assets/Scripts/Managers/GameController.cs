@@ -31,6 +31,17 @@ public class GameController : MonoBehaviour
     private List<ItemDetails> m_PlayerInventory = new List<ItemDetails>();
     public static event OnInventoryChangedDelegate OnInventoryChanged = delegate { };
 
+    [SerializeField]
+    private List<Texture2D> enviormentList;
+
+    private enum enviormentStateEnum
+    {
+        Bridge,
+        Hallway,
+        CoCaptain,
+        Oxygenroom,
+        OxygenroomWithEnergy
+    }
 
     private void Awake()
     {
@@ -40,7 +51,7 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         m_PlayerInventory.AddRange(m_ItemDatabase.Values);
-        OnInventoryChanged.Invoke(m_PlayerInventory.Select(x=> x.GUID).ToArray(), InventoryChangeType.Pickup);
+        OnInventoryChanged?.Invoke(m_PlayerInventory.Select(x=> x.GUID).ToArray(), InventoryChangeType.Pickup);
     }
 
     /// <summary>

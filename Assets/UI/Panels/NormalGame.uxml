@@ -1,14 +1,16 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/Inventory.uss?fileID=7433441132597879392&amp;guid=454825772093c7840be3d857971743dd&amp;type=3#Inventory" />
     <ui:VisualElement name="Container" class="container">
-        <ui:VisualElement name="InventoryOverlay" class="inventory" style="visibility: hidden;">
+        <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ArrowLeft" class="arrowLeft" />
+        <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ArrowRight" class="arrowRight" />
+        <ui:VisualElement name="InventoryOverlay" class="inventory" style="visibility: hidden; display: flex; position: absolute;">
             <ui:Label text="Inventory" display-tooltip-when-elided="true" name="Header" class="header" />
             <ui:VisualElement name="SlotContainer" class="slotsContainer" style="align-items: center; justify-content: center; flex-direction: row; margin-top: 0; margin-left: 0; margin-right: 0; margin-bottom: 0; flex-shrink: 1;" />
         </ui:VisualElement>
-        <ui:VisualElement name="GhostIcon" style="visibility: hidden; position: absolute; width: 128px; height: 128px; background-image: none;" />
+        <ui:VisualElement name="GhostIcon" style="visibility: hidden; position: absolute; width: 128px; height: 128px; background-image: none; display: flex; left: 50%; top: 50%;" />
     </ui:VisualElement>
     <ui:VisualElement name="StandartButtonContainer" class="buttonContainer" style="flex-grow: 0; justify-content: flex-start; align-items: flex-start; left: 0; right: 0; top: 0; bottom: 0; position: relative; opacity: 1; align-self: auto; flex-direction: row; height: 100px; flex-wrap: wrap-reverse;">
-        <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Inventory" class="basicButton inventoryButton" style="left: 1700px; width: 200px; padding-top: 12px; margin-top: 4px; margin-right: 4px; margin-bottom: 4px; margin-left: 4px; top: 0; -unity-text-align: middle-center; bottom: 0; height: 100px; text-overflow: clip; color: rgb(11, 81, 121); font-size: 0;" />
-        <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Menu" class="basicButton menuButton" style="left: auto; width: 200px; padding-top: 12px; margin-top: 4px; margin-right: 4px; margin-bottom: 4px; margin-left: 4px; align-self: auto; right: 10%; align-items: auto; height: 100px;" />
+        <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Inventory" class="basicButton inventoryButton" style="left: 1700px; width: 200px; padding-top: 12px; margin-top: 4px; margin-right: 4px; margin-bottom: 4px; margin-left: 4px; top: 0; -unity-text-align: middle-center; bottom: 0; height: 100px; text-overflow: clip; color: rgb(11, 81, 121); font-size: 0; background-color: rgba(188, 188, 188, 0);" />
+        <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Menu" class="basicButton menuButton" style="left: auto; width: 200px; padding-top: 12px; margin-top: 4px; margin-right: 4px; margin-bottom: 4px; margin-left: 4px; align-self: auto; right: 10%; align-items: auto; height: 100px; font-size: 0;" />
     </ui:VisualElement>
 </ui:UXML>
