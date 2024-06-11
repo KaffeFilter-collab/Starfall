@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Managers;
 using UnityEngine;
 
 [Serializable]
@@ -30,14 +31,15 @@ public class GameController : MonoBehaviour
     private static Dictionary<string, ItemDetails> m_ItemDatabase = new Dictionary<string, ItemDetails>();
     private List<ItemDetails> m_PlayerInventory = new List<ItemDetails>();
     public static event OnInventoryChangedDelegate OnInventoryChanged = delegate { };
-
+    public static GameController Instance { get; private set; }
     [SerializeField]
     private List<Texture2D> enviormentList;
 
     private enum enviormentStateEnum
     {
         Bridge,
-        Hallway,
+        Hallway1,
+        Hallway2,
         CoCaptain,
         Oxygenroom,
         OxygenroomWithEnergy
@@ -45,13 +47,31 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        //PopulateDatabase();
+        if (Instance is not null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(this);
+    }
+    
+    private void OnDestroy()
+    {
+        if (Instance == this) Instance = null;
     }
 
     private void Start()
     {
         m_PlayerInventory.AddRange(m_ItemDatabase.Values);
         OnInventoryChanged?.Invoke(m_PlayerInventory.Select(x=> x.GUID).ToArray(), InventoryChangeType.Pickup);
+    }
+
+    public void EnviormentChange(int enviormentnumber)
+    {
+        Debug.Log(enviormentnumber);
+        UIManagerControler.Instance.SetEnviorment(enviormentList[enviormentnumber]);
     }
 
     /// <summary>

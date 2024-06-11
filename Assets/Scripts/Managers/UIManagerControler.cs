@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using System.Linq;
 using Unity.VisualScripting;
+using UnityEditor;
 
 
 namespace Managers
@@ -24,6 +26,7 @@ namespace Managers
         {
             Enviorment,
             MainMenu,
+            Intro,
             NormalGame,
             PauseMenu
         }
@@ -48,9 +51,11 @@ namespace Managers
             root = uiDocument.rootVisualElement;
             GetSetupPanels();
             GetMainMenuRefrences();
+            GetArrowRefrences();
             GetInventoryRefrences();
             GetSettingsRefrences();
             GetInSettingsRefrences();
+            GetItemRefrences();
             ChangePanel(StartPanel);
         }
 
@@ -71,6 +76,8 @@ namespace Managers
 
         public void SetEnviorment(Texture2D texture)
         {
+            Panels[(int)UiEnum.Enviorment].style.visibility = Visibility.Visible;
+            Panels[(int)UiEnum.Enviorment].style.display = DisplayStyle.Flex;
             Panels[(int)UiEnum.Enviorment].style.backgroundImage = new StyleBackground(texture);
         }
         
@@ -80,6 +87,27 @@ namespace Managers
 
         #endregion
 
+        #region tempArrows
+
+        public int currentRoom;
+        public void GetArrowRefrences()
+        {
+            Panels[(int)UiEnum.NormalGame].Q<Button>("ArrowLeft").clicked += GoLeft;
+            Panels[(int)UiEnum.NormalGame].Q<Button>("ArrowRight").clicked += GoRight; 
+        }
+
+        public void GoLeft()
+        {
+          if(currentRoom != 0)GameController.Instance.EnviormentChange(currentRoom--);
+        }
+
+        public void GoRight()
+        {
+            if(currentRoom != 5)GameController.Instance.EnviormentChange(currentRoom++);
+        }
+
+        #endregion
+        
         #region Inventory
 
         private VisualElement inventory;
@@ -184,13 +212,67 @@ namespace Managers
 
         public void StartNewGame()
         {
-            ChangePanel(UiEnum.NormalGame);
-            SceneManager.LoadScene(1);
+            StartCoroutine(Intro());
         }
 
         public void EndGame()
         {
             Application.Quit();
+        }
+
+        #endregion
+
+        #region items
+
+        public void GetItemRefrences()
+        {
+            List<Button> items = Panels[(int)UiEnum.NormalGame].Query<Button>(className: "item").ToList();
+            foreach (var button in items)
+            {
+                button.AddToClassList("duBistEs");
+                button.clicked += ItemsOnClicked;
+            }
+        }
+
+        public void ItemsOnClicked()
+        {
+            Button button = Panels[(int)UiEnum.NormalGame].Q<Button>(className: "duBistEs");
+            StartCoroutine(GotoInventory(button));
+            // todo: move to end of coroutine
+            
+        }
+        
+        IEnumerator GotoInventory(VisualElement item)
+        {
+            Debug.Log(item.resolvedStyle.top);
+            Vector2 currentpostion = new Vector2(item.resolvedStyle.left, item.resolvedStyle.top);
+            while (currentpostion.x <= 7.915752f && currentpostion.y >= -4.330247f)
+            {
+                currentpostion = Vector3.LerpUnclamped(currentpostion,new Vector3(8.37f,-4.55f,-1),0.05f);;
+                item.style.top = currentpostion.x;
+                item.style.left = currentpostion.y;
+                yield return new WaitForSeconds(0.02f);
+            }
+            Debug.Log("Angekommen =)");
+            item.parent.Remove(item);
+        }
+
+        #endregion
+
+        #region IntrotextDeletasap
+
+        IEnumerator Intro()
+        {
+            ChangePanel(UiEnum.Intro);
+            Label text = Panels[(int)UiEnum.Intro].Q<Label>("Introtext");
+
+            text.text =
+                "Die Besatzung rennt auf die Phantom Bride und realisieren, dass sie nicht los fliegen können weil das Schiff noch gekoppelt ist.";
+            yield return new WaitForSeconds(2);
+            text.text = "Ein crewmitdglied entscheided sich zurückzubleiben um die restliche besatzung zu retten";
+            yield return new WaitForSeconds(2f);
+            SceneManager.LoadScene(1);
+            ChangePanel(UiEnum.NormalGame);
         }
 
         #endregion
