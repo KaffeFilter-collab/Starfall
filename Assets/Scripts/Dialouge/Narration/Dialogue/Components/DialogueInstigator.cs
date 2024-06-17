@@ -15,11 +15,10 @@ public class DialogueInstigator : MonoBehaviour
     private void Awake()
     {
         m_DialogueSequencer = new DialogueSequencer();
-
-        m_DialogueSequencer.OnDialogueStart += OnDialogueStart;
-        m_DialogueSequencer.OnDialogueEnd += OnDialogueEnd;
-        m_DialogueSequencer.OnDialogueNodeStart += m_DialogueChannel.RaiseDialogueNodeStart;
-        m_DialogueSequencer.OnDialogueNodeEnd += m_DialogueChannel.RaiseDialogueNodeEnd;
+        DialogueSequencer.OnDialogueStart += OnDialogueStart;
+        DialogueSequencer.OnDialogueEnd += OnDialogueEnd;
+        DialogueSequencer.OnDialogueNodeStart += m_DialogueChannel.RaiseDialogueNodeStart;
+        DialogueSequencer.OnDialogueNodeEnd += m_DialogueChannel.RaiseDialogueNodeEnd;
 
         m_DialogueChannel.OnDialogueRequested += m_DialogueSequencer.StartDialogue;
         m_DialogueChannel.OnDialogueNodeRequested += m_DialogueSequencer.StartDialogueNode;
@@ -30,10 +29,10 @@ public class DialogueInstigator : MonoBehaviour
         m_DialogueChannel.OnDialogueNodeRequested -= m_DialogueSequencer.StartDialogueNode;
         m_DialogueChannel.OnDialogueRequested -= m_DialogueSequencer.StartDialogue;
 
-        m_DialogueSequencer.OnDialogueNodeEnd -= m_DialogueChannel.RaiseDialogueNodeEnd;
-        m_DialogueSequencer.OnDialogueNodeStart -= m_DialogueChannel.RaiseDialogueNodeStart;
-        m_DialogueSequencer.OnDialogueEnd -= OnDialogueEnd;
-        m_DialogueSequencer.OnDialogueStart -= OnDialogueStart;
+        DialogueSequencer.OnDialogueNodeEnd -= m_DialogueChannel.RaiseDialogueNodeEnd;
+        DialogueSequencer.OnDialogueNodeStart -= m_DialogueChannel.RaiseDialogueNodeStart;
+        DialogueSequencer.OnDialogueEnd -= OnDialogueEnd;
+        DialogueSequencer.OnDialogueStart -= OnDialogueStart;
 
         m_DialogueSequencer = null;
     }

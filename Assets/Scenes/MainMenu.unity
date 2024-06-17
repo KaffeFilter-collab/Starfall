@@ -437,6 +437,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 550660012737308976, guid: 2edeeb5b63a21e94aae5ff8da380ac72, type: 3}
+      propertyPath: m_DialogueChannel
+      value: 
+      objectReference: {fileID: 11400000, guid: 4b5bec9acf8527b42a83fd2ba95457ea, type: 2}
+    - target: {fileID: 550660012737308976, guid: 2edeeb5b63a21e94aae5ff8da380ac72, type: 3}
       propertyPath: m_ChoiceControllerPrefab
       value: 
       objectReference: {fileID: 1252651752}

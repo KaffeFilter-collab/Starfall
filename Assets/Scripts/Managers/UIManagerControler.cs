@@ -269,7 +269,6 @@ namespace Managers
             while (currentpostion.x <= 7.915752f && currentpostion.y >= -4.330247f)
             {
                 currentpostion = Vector3.LerpUnclamped(currentpostion, new Vector3(8.37f, -4.55f, -1), 0.05f);
-                ;
                 item.style.top = currentpostion.x;
                 item.style.left = currentpostion.y;
                 yield return new WaitForSeconds(0.02f);
@@ -283,10 +282,20 @@ namespace Managers
         
         #region Dialogue
 
+        private Label dialogueText;
         private void GetDialogueRefrences()
         {
+            DialogueSequencer.OnDialogueStart += OnDialogueStart;
             Panels[(int)UiEnum.Dialogue].Q<Button>("YesButton").clicked += OnSettingsButtonClicked;
             Panels[(int)UiEnum.Dialogue].Q<Button>("NoButton").clicked += OnSettingsButtonClicked;
+            dialogueText = Panels[(int)UiEnum.Dialogue].Q<Label>("Dialogue");
+        }
+
+        private void OnDialogueStart(Dialogue dialogue)
+        {
+            ChangePanel(UiEnum.Dialogue);
+            string text = dialogue.FirstNode.DialogueLine.Text;
+            dialogueText.text = text;
         }
 
         #endregion

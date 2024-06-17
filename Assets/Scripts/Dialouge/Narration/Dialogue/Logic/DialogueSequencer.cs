@@ -12,10 +12,10 @@ public class DialogueSequencer
     public delegate void DialogueCallback(Dialogue dialogue);
     public delegate void DialogueNodeCallback(DialogueNode node);
 
-    public DialogueCallback OnDialogueStart;
-    public DialogueCallback OnDialogueEnd;
-    public DialogueNodeCallback OnDialogueNodeStart;
-    public DialogueNodeCallback OnDialogueNodeEnd;
+    public static DialogueCallback OnDialogueStart;
+    public static DialogueCallback OnDialogueEnd;
+    public static DialogueNodeCallback OnDialogueNodeStart;
+    public static DialogueNodeCallback OnDialogueNodeEnd;
 
     private Dialogue m_CurrentDialogue;
     private DialogueNode m_CurrentNode;
