@@ -94,3 +94,10 @@
 .item {
     position: absolute;
 }
+
+.interactablesContainer {
+    position: absolute;
+    left: auto;
+    width: 100%;
+    height: 100%;
+}

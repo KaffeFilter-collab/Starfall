@@ -35,7 +35,7 @@ namespace Managers
         }
 
 
-
+        [SerializeField]private List<ChoiceDialogueNode> FirstNodes;
         private List<VisualElement> Panels;
 
         //DialougeSystem
@@ -247,19 +247,20 @@ namespace Managers
         public void GetItemRefrences()
         {
             List<Button> items = Panels[(int)UiEnum.NormalGame].Query<Button>(className: "item").ToList();
-            foreach (var button in items)
+            for (int i=0;i <items.Count;i++)
             {
-                button.AddToClassList("duBistEs");
-                button.clicked += ItemsOnClicked;
+                items[i].AddToClassList("duBistEs");
+                items[i].userData = FirstNodes[i];
+                items[i].clicked += ItemsOnClicked;
             }
         }
 
         public void ItemsOnClicked()
         {
+            Debug.Log("clicked");
             Button button = Panels[(int)UiEnum.NormalGame].Q<Button>(className: "duBistEs");
             StartCoroutine(GotoInventory(button));
             // todo: move to end of coroutine
-
         }
 
         IEnumerator GotoInventory(VisualElement item)
@@ -286,11 +287,20 @@ namespace Managers
         private void GetDialogueRefrences()
         {
             DialogueSequencer.OnDialogueStart += OnDialogueStart;
-            Panels[(int)UiEnum.Dialogue].Q<Button>("YesButton").clicked += OnSettingsButtonClicked;
-            Panels[(int)UiEnum.Dialogue].Q<Button>("NoButton").clicked += OnSettingsButtonClicked;
+            Panels[(int)UiEnum.Dialogue].Q<Button>("YesButton").clicked += DialogueYes;
+            Panels[(int)UiEnum.Dialogue].Q<Button>("NoButton").clicked += DialogueNo;
             dialogueText = Panels[(int)UiEnum.Dialogue].Q<Label>("Dialogue");
         }
 
+        private void DialogueYes()
+        {
+            
+        }
+
+        private void DialogueNo()
+        {
+            
+        }
         private void OnDialogueStart(Dialogue dialogue)
         {
             ChangePanel(UiEnum.Dialogue);
@@ -315,8 +325,6 @@ namespace Managers
             _music.RegisterCallback<ChangeEvent<float>>((evt) => AudioManager.Instance.SetVolume(AudioManager.MixerGroups.MusicVolume, evt.newValue));
             _sfx.RegisterCallback<ChangeEvent<float>>((evt) => AudioManager.Instance.SetVolume(AudioManager.MixerGroups.SfxVolume, evt.newValue));
         }
-
-
          #endregion
     }
 
