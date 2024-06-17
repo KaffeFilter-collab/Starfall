@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Background" style="flex-grow: 1; position: absolute; flex-shrink: 0; width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/Sprites/MainMenuUI/WithColor/stars_fast.png?fileID=2800000&amp;guid=cc6881c114e4f8d4384cec76290192f7&amp;type=3#stars_fast&apos;);" />
+    <ui:VisualElement name="Container" style="flex-grow: 1; position: absolute; flex-shrink: 0; width: 100%; height: 100%;">
+        <ui:Slider picking-mode="Ignore" label="GeneralVolume" value="42" high-value="100" name="MasterSound" style="position: relative; left: 25%; top: 48%; max-width: 50%; color: rgb(255, 255, 255); font-size: 28px; -unity-text-outline-color: rgba(0, 45, 255, 0);" />
+        <ui:Slider picking-mode="Ignore" label="Musik" value="42" high-value="100" name="MusicSound" style="top: 50%; left: 25%; max-width: 50%; font-size: 28px; color: rgb(255, 255, 255);" />
+        <ui:Slider picking-mode="Ignore" label="SoundEffects" value="42" high-value="100" name="SFXSound" style="top: 52%; left: 25%; max-width: 50%; font-size: 28px; color: rgb(255, 255, 255);" />
+        <ui:Label tabindex="-1" text="Options" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" style="height: 13px; width: 1237px; font-size: 200px; color: rgb(255, 255, 255); left: 30%; top: -10%;" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Dialogue.uss?fileID=7433441132597879392&amp;guid=aaca5180d4d92d04f823f14ba4dbaf83&amp;type=3#Dialogue" />
+    <ui:VisualElement name="Container" style="flex-grow: 1; -unity-font-style: normal; font-size: 0; background-color: rgba(0, 0, 0, 0);">
+        <ui:VisualElement name="TextBox" class="TextBox" style="flex-grow: 1; left: 500px; background-image: url(&apos;project://database/Assets/Sprites/InGameUI/Screen.png?fileID=2800000&amp;guid=1c85465f069b76e49ba7f1896f9ab8ab&amp;type=3#Screen&apos;);">
+            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Dialogue" class="Dialogue" style="font-size: 25px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="YesNoContainer" class="YesNoContainer" style="flex-grow: 1; height: 200px; width: 110px; top: 699px; left: 1457px; background-image: url(&apos;project://database/Assets/Sprites/InGameUI/YesNoPanel/YesNoPanel.png?fileID=2800000&amp;guid=57522de6dc7545b45af1bd238d65213c&amp;type=3#YesNoPanel&apos;);">
+        <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="YesButton" class="Buttons" style="background-image: url(&apos;project://database/Assets/Sprites/InGameUI/YesNoPanel/YesButton.png?fileID=2800000&amp;guid=17f37e1d73b06a04c8b7f16381d1a93b&amp;type=3#YesButton&apos;); font-size: 0; background-color: rgba(188, 188, 188, 0);" />
+        <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NoButton" class="Buttons" style="background-image: url(&apos;project://database/Assets/Sprites/InGameUI/YesNoPanel/NoButton.png?fileID=2800000&amp;guid=8b5d7debc33e99a4f9a712bbd31c639a&amp;type=3#NoButton&apos;); font-size: 0; background-color: rgba(188, 188, 188, 0);" />
+    </ui:VisualElement>
+</ui:UXML>

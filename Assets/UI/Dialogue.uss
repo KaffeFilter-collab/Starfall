@@ -1,0 +1,35 @@
+.TextBox {
+    position: absolute;
+    background-image: url('project://database/Assets/Sprites/Enviorment/2_Hallway.png?fileID=2800000&guid=c44b6cda8bbf14742a06ac1f66693456&type=3#2_Hallway');
+    top: 60%;
+    width: 50%;
+    height: 30%;
+    max-height: 30%;
+    left: 500px;
+}
+
+.Dialogue {
+    flex-grow: 1;
+    -unity-text-align: middle-center;
+}
+
+.YesNoContainer {
+    position: absolute;
+    flex-grow: 1;
+    flex-shrink: 0;
+    top: 702px;
+    left: 1463px;
+}
+
+.Buttons {
+    height: 80px;
+    padding-top: 2px;
+    padding-right: 2px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+    margin-top: 10px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    margin-left: 10px;
+    width: 80px;
+}

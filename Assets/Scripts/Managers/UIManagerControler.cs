@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using System.Linq;
+using Manager;
 using Unity.VisualScripting;
 using UnityEditor;
 
@@ -20,7 +21,7 @@ namespace Managers
         private VisualElement root;
         private UiEnum CurrentPanel;
         [SerializeField] private UiEnum StartPanel;
-        
+
         //Ui enum
         public enum UiEnum
         {
@@ -28,12 +29,22 @@ namespace Managers
             MainMenu,
             Intro,
             NormalGame,
-            PauseMenu
+            PauseMenu,
+            Dialogue,
+            Options
         }
-        
-        
+
+
 
         private List<VisualElement> Panels;
+
+        //DialougeSystem
+        [SerializeField] private UIManagerControler m_ChoiceControllerPrefab;
+        [SerializeField] private DialogueChannel m_DialogueChannel;
+
+        private DialogueNode m_NextNode = null;
+
+        [SerializeField]
         private void Awake()
         {
             if (Instance is not null)
@@ -45,8 +56,8 @@ namespace Managers
             Instance = this;
             DontDestroyOnLoad(this);
             //End of thingy
-            
-            
+
+
             uiDocument = GetComponent<UIDocument>();
             root = uiDocument.rootVisualElement;
             GetSetupPanels();
@@ -56,6 +67,8 @@ namespace Managers
             GetSettingsRefrences();
             GetInSettingsRefrences();
             GetItemRefrences();
+            GetDialogueRefrences();
+            GetSoundSettings();
             ChangePanel(StartPanel);
         }
 
@@ -64,13 +77,15 @@ namespace Managers
             if (Instance == this) Instance = null;
         }
 
-        private void GetSetupPanels() {
+        private void GetSetupPanels()
+        {
             Panels = root.Query<VisualElement>(className: "panel").ToList();
         }
 
-        public void ChangePanel(UiEnum newUI) {
+        public void ChangePanel(UiEnum newUI)
+        {
             Panels[(int)CurrentPanel].style.display = DisplayStyle.None;
-            Panels[(int) newUI].style.display = DisplayStyle.Flex;
+            Panels[(int)newUI].style.display = DisplayStyle.Flex;
             CurrentPanel = newUI;
         }
 
@@ -80,7 +95,7 @@ namespace Managers
             Panels[(int)UiEnum.Enviorment].style.display = DisplayStyle.Flex;
             Panels[(int)UiEnum.Enviorment].style.backgroundImage = new StyleBackground(texture);
         }
-        
+
         #region Timerbar
 
 
@@ -90,33 +105,34 @@ namespace Managers
         #region tempArrows
 
         public int currentRoom;
+
         public void GetArrowRefrences()
         {
             Panels[(int)UiEnum.NormalGame].Q<Button>("ArrowLeft").clicked += GoLeft;
-            Panels[(int)UiEnum.NormalGame].Q<Button>("ArrowRight").clicked += GoRight; 
+            Panels[(int)UiEnum.NormalGame].Q<Button>("ArrowRight").clicked += GoRight;
         }
 
         public void GoLeft()
         {
-          if(currentRoom != 0)GameController.Instance.EnviormentChange(currentRoom--);
+            if (currentRoom != 0) GameController.Instance.EnviormentChange(currentRoom--);
         }
 
         public void GoRight()
         {
-            if(currentRoom != 5)GameController.Instance.EnviormentChange(currentRoom++);
+            if (currentRoom != 5) GameController.Instance.EnviormentChange(currentRoom++);
         }
 
         #endregion
-        
+
         #region Inventory
 
         private VisualElement inventory;
-        
+
         public void GetInventoryRefrences()
         {
             inventory = Panels[(int)UiEnum.NormalGame].Q<VisualElement>("InventoryOverlay");
             Panels[(int)UiEnum.NormalGame].Q<Button>("Inventory").clicked += InventoryToggle;
-            m_SlotContainer = Panels[(int)UiEnum.NormalGame].Q<VisualElement>(className:"slotsContainer");
+            m_SlotContainer = Panels[(int)UiEnum.NormalGame].Q<VisualElement>(className: "slotsContainer");
             GameController.OnInventoryChanged += OnInventoryChanged;
             for (int i = 0; i < 20; i++)
             {
@@ -125,8 +141,8 @@ namespace Managers
                 m_SlotContainer.Add(item);
             }
         }
-        
-        
+
+
         public void InventoryToggle()
         {
             inventory.style.visibility = inventory.style.visibility == Visibility.Visible
@@ -138,7 +154,7 @@ namespace Managers
 
         public List<InventorySlot> InventoryItems = new List<InventorySlot>();
         private VisualElement m_SlotContainer;
-        
+
 
         public void OnInventoryChanged(string[] itemGuid, InventoryChangeType change)
         {
@@ -157,6 +173,7 @@ namespace Managers
                         break;
                     }
                 }
+
                 Debug.Log(emptySlot);
                 i++;
                 if (emptySlot != null)
@@ -165,12 +182,14 @@ namespace Managers
                 }
             }
         }
-        
 
-            #endregion
+
+        #endregion
+
         #endregion
 
         #region PausMenu
+
         public void GetSettingsRefrences()
         {
             Panels[(int)UiEnum.NormalGame].Q<Button>("Menu").clicked += OnSettingsButtonClicked;
@@ -179,7 +198,7 @@ namespace Managers
         public void GetInSettingsRefrences()
         {
             Panels[(int)UiEnum.PauseMenu].Q<Button>("Resume").clicked += OnSettingsButtonClicked;
-            Panels[(int)UiEnum.PauseMenu].Q<Button>("Quit").clicked += OnQuitButtonClicked; 
+            Panels[(int)UiEnum.PauseMenu].Q<Button>("Quit").clicked += OnQuitButtonClicked;
         }
 
         private void OnSettingsButtonClicked()
@@ -193,7 +212,7 @@ namespace Managers
                 ChangePanel(UiEnum.NormalGame);
             }
         }
-        
+
         private void OnQuitButtonClicked()
         {
             ChangePanel(UiEnum.MainMenu);
@@ -212,7 +231,8 @@ namespace Managers
 
         public void StartNewGame()
         {
-            StartCoroutine(Intro());
+            SceneManager.LoadScene(1);
+            ChangePanel(UiEnum.NormalGame);
         }
 
         public void EndGame()
@@ -221,7 +241,7 @@ namespace Managers
         }
 
         #endregion
-
+        
         #region items
 
         public void GetItemRefrences()
@@ -239,42 +259,56 @@ namespace Managers
             Button button = Panels[(int)UiEnum.NormalGame].Q<Button>(className: "duBistEs");
             StartCoroutine(GotoInventory(button));
             // todo: move to end of coroutine
-            
+
         }
-        
+
         IEnumerator GotoInventory(VisualElement item)
         {
             Debug.Log(item.resolvedStyle.top);
             Vector2 currentpostion = new Vector2(item.resolvedStyle.left, item.resolvedStyle.top);
             while (currentpostion.x <= 7.915752f && currentpostion.y >= -4.330247f)
             {
-                currentpostion = Vector3.LerpUnclamped(currentpostion,new Vector3(8.37f,-4.55f,-1),0.05f);;
+                currentpostion = Vector3.LerpUnclamped(currentpostion, new Vector3(8.37f, -4.55f, -1), 0.05f);
+                ;
                 item.style.top = currentpostion.x;
                 item.style.left = currentpostion.y;
                 yield return new WaitForSeconds(0.02f);
             }
+
             Debug.Log("Angekommen =)");
             item.parent.Remove(item);
         }
 
         #endregion
+        
+        #region Dialogue
 
-        #region IntrotextDeletasap
-
-        IEnumerator Intro()
+        private void GetDialogueRefrences()
         {
-            ChangePanel(UiEnum.Intro);
-            Label text = Panels[(int)UiEnum.Intro].Q<Label>("Introtext");
-
-            text.text =
-                "Die Besatzung rennt auf die Phantom Bride und realisieren, dass sie nicht los fliegen können weil das Schiff noch gekoppelt ist.";
-            yield return new WaitForSeconds(2);
-            text.text = "Ein crewmitdglied entscheided sich zurückzubleiben um die restliche besatzung zu retten";
-            yield return new WaitForSeconds(2f);
-            SceneManager.LoadScene(1);
-            ChangePanel(UiEnum.NormalGame);
+            Panels[(int)UiEnum.Dialogue].Q<Button>("YesButton").clicked += OnSettingsButtonClicked;
+            Panels[(int)UiEnum.Dialogue].Q<Button>("NoButton").clicked += OnSettingsButtonClicked;
         }
 
         #endregion
+
+        #region Soundsettings
+
+        private Slider _master;
+        private Slider _music;
+        private Slider _sfx;
+
+        public void GetSoundSettings()
+        {
+            _master = Panels[(int)UiEnum.Options].Q<Slider>("MasterSound");
+            _music = Panels[(int)UiEnum.Options].Q<Slider>("MusicSound");
+            _sfx = Panels[(int)UiEnum.Options].Q<Slider>("SFXSound");
+            _master.RegisterCallback<ChangeEvent<float>>((evt) => AudioManager.Instance.SetVolume(AudioManager.MixerGroups.MasterVolume, evt.newValue));
+            _music.RegisterCallback<ChangeEvent<float>>((evt) => AudioManager.Instance.SetVolume(AudioManager.MixerGroups.MusicVolume, evt.newValue));
+            _sfx.RegisterCallback<ChangeEvent<float>>((evt) => AudioManager.Instance.SetVolume(AudioManager.MixerGroups.SfxVolume, evt.newValue));
+        }
+
+
+         #endregion
     }
+
 }
