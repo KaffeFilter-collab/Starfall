@@ -13,16 +13,4 @@
         <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Inventory" class="basicButton inventoryButton" style="left: 1700px; width: 200px; padding-top: 12px; margin-top: 4px; margin-right: 4px; margin-bottom: 4px; margin-left: 4px; top: 0; -unity-text-align: middle-center; bottom: 0; height: 100px; text-overflow: clip; color: rgb(11, 81, 121); font-size: 0; background-color: rgba(188, 188, 188, 0);" />
         <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Menu" class="basicButton menuButton" style="left: auto; width: 200px; padding-top: 12px; margin-top: 4px; margin-right: 4px; margin-bottom: 4px; margin-left: 4px; align-self: auto; right: 10%; align-items: auto; height: 100px; font-size: 0;" />
     </ui:VisualElement>
-    <ui:VisualElement name="BookItemContainer" class="interactablesContainer" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Sprites/Interactables/Oxygen/Oxygenrooom_book_item.png?fileID=2800000&amp;guid=8d1dd6a78dca050448434ff0f6d8d58d&amp;type=3#Oxygenrooom_book_item&apos;);">
-        <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BookItem" class="item" style="top: 525px; left: 1346px; width: 107px; height: 59px; visibility: hidden;" />
-    </ui:VisualElement>
-    <ui:VisualElement name="GunItemsContainer" class="interactablesContainer" style="flex-grow: 1;">
-        <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="GunItem" class="item" style="top: -1px; left: 4px;" />
-    </ui:VisualElement>
-    <ui:VisualElement name="HeroinItemsContainer" class="interactablesContainer" style="flex-grow: 1;">
-        <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="HeroinItem" class="item" />
-    </ui:VisualElement>
-    <ui:VisualElement name="NoteItemsContainer" class="interactablesContainer" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Sprites/Interactables/CoCaptian/CoCaptianQuatier_note.png?fileID=2800000&amp;guid=b4d8fd3960c74a74a84d96895b08ce9e&amp;type=3#CoCaptianQuatier_note&apos;);">
-        <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NoteItem" class="item" style="background-image: url(&apos;project://database/Assets/Sprites/Interactables/CoCaptian/CoCaptianQuatier_note.png?fileID=2800000&amp;guid=b4d8fd3960c74a74a84d96895b08ce9e&amp;type=3#CoCaptianQuatier_note&apos;);" />
-    </ui:VisualElement>
 </ui:UXML>

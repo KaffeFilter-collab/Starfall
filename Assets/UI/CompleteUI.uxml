@@ -6,8 +6,10 @@
     <ui:Template name="Menu" src="project://database/Assets/UI/Panels/Menu.uxml?fileID=9197481963319205126&amp;guid=89bd44e53cd12204297310423e83fd23&amp;type=3#Menu" />
     <ui:Template name="Dialogue" src="project://database/Assets/UI/Panels/Dialogue.uxml?fileID=9197481963319205126&amp;guid=f1501412071c58444919f681729473a5&amp;type=3#Dialogue" />
     <ui:Template name="Options" src="project://database/Assets/UI/Panels/Options.uxml?fileID=9197481963319205126&amp;guid=88b3c1ff238fcb1449b4d1d5e602f57e&amp;type=3#Options" />
+    <ui:Template name="Items" src="project://database/Assets/UI/Panels/Items.uxml?fileID=9197481963319205126&amp;guid=ebd5bb33174710248994cd709529810a&amp;type=3#Items" />
     <Style src="project://database/Assets/UI/CompletUI.uss?fileID=7433441132597879392&amp;guid=830e4ae8be484f049b338e4fba01f0ad&amp;type=3#CompletUI" />
     <ui:Instance template="Enviorment" name="Enviorment" class="panel" style="position: absolute; width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/Sprites/Enviorment/Bridge.png?fileID=2800000&amp;guid=e97fa79b7c6122c479a6c08a5219cca3&amp;type=3#Bridge&apos;); display: none;" />
+    <ui:Instance template="Items" name="Items" class="panel" style="position: absolute; flex-shrink: 0; visibility: visible; display: none;" />
     <ui:Instance template="MainMenu" name="MainMenu" class="panel" style="display: none;" />
     <ui:Instance template="Intro" name="Intro" class="panel" style="display: none;" />
     <ui:Instance template="NormalGame" name="NormalGame" picking-mode="Ignore" class="panel" style="display: none;" />

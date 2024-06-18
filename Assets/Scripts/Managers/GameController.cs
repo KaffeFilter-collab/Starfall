@@ -42,9 +42,13 @@ public class GameController : MonoBehaviour
         Bridge,
         Hallway1,
         Hallway2,
-        CoCaptain,
-        Oxygenroom,
-        OxygenroomWithEnergy
+        CaptianQuatier,
+        CoCaptainQuatier,
+        Crew,
+        Lounge,
+        Medbay,
+        StandartOxygenroom,
+        WithLightsOxygenroom
     }
 
     private void Awake()
@@ -73,8 +77,8 @@ public class GameController : MonoBehaviour
 
     public void EnviormentChange(int enviormentnumber)
     {
-        Debug.Log(enviormentnumber);
-        UIManagerControler.Instance.SetEnviorment(enviormentList[enviormentnumber]);
+        UIManagerControler.Instance.EnabledItems(enviormentnumber);
+        UIManagerControler.Instance.SetEnviorment(enviormentList[enviormentnumber] , enviormentnumber);
     }
 
     /// <summary>

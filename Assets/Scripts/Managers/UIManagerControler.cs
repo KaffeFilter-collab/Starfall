@@ -26,6 +26,7 @@ namespace Managers
         public enum UiEnum
         {
             Enviorment,
+            Items,
             MainMenu,
             Intro,
             NormalGame,
@@ -33,8 +34,7 @@ namespace Managers
             Dialogue,
             Options
         }
-
-
+        
         [SerializeField]private List<ChoiceDialogueNode> FirstNodes;
         private List<VisualElement> Panels;
 
@@ -69,6 +69,8 @@ namespace Managers
             GetItemRefrences();
             GetDialogueRefrences();
             GetSoundSettings();
+            GetTimebar();
+            GetItemsForItemChanges();
             ChangePanel(StartPanel);
         }
 
@@ -89,16 +91,112 @@ namespace Managers
             CurrentPanel = newUI;
         }
 
-        public void SetEnviorment(Texture2D texture)
+        private void Update()
+        {
+            if (Time.time == Time.time + beginingtime)
+            {
+                timer.text = "100";
+            }
+                
+        }
+
+        private VisualElement bridge;
+        private VisualElement firsthallway;
+        private VisualElement secondHallway;
+        private VisualElement captain;
+        private VisualElement coCaptain;
+        private VisualElement crewRoom;
+        private VisualElement loungeRoom;
+        private VisualElement medbay;
+        private VisualElement oxygenRoomBook;
+        private VisualElement oxygenRoomCodePad;
+
+        public void GetItemsForItemChanges()
+        {
+            bridge = Panels[(int)UiEnum.Items].Q<VisualElement>("Bridge");
+            firsthallway = Panels[(int)UiEnum.Items].Q<VisualElement>("1Hallway");
+            secondHallway = Panels[(int)UiEnum.Items].Q<VisualElement>("2Hallway");
+            captain = Panels[(int)UiEnum.Items].Q<VisualElement>("Captain");
+            coCaptain = Panels[(int)UiEnum.Items].Q<VisualElement>("CoCaptain");
+            crewRoom = Panels[(int)UiEnum.Items].Q<VisualElement>("CrewRoom");
+            loungeRoom = Panels[(int)UiEnum.Items].Q<VisualElement>("LoungeRoom");
+            medbay= Panels[(int)UiEnum.Items].Q<VisualElement>("Medbay");
+            oxygenRoomBook = Panels[(int)UiEnum.Items].Q<VisualElement>("OxygenRoomBook");
+            oxygenRoomCodePad = Panels[(int)UiEnum.Items].Q<VisualElement>("OxyigenRoomCodePad");
+
+        }
+        public void SetEnviorment(Texture2D texture , int foritem)
         {
             Panels[(int)UiEnum.Enviorment].style.visibility = Visibility.Visible;
             Panels[(int)UiEnum.Enviorment].style.display = DisplayStyle.Flex;
             Panels[(int)UiEnum.Enviorment].style.backgroundImage = new StyleBackground(texture);
+            switch (foritem)
+            {
+                case 0:
+                    bridge.style.visibility = Visibility.Visible;
+                    Debug.Log("bridge");
+                    break;
+                case 1:
+                    firsthallway.style.visibility = Visibility.Visible;
+                    Debug.Log("bridge");
+                    break;
+                case 2:
+                    secondHallway.style.visibility = Visibility.Visible;
+                    Debug.Log("bridge");
+
+                    break;
+                case 3:
+                    Debug.Log("bridge");
+
+                    captain.style.visibility = Visibility.Visible;
+                    break;
+                case 4:
+                    Debug.Log("bridge");
+
+                    coCaptain.style.visibility = Visibility.Visible;
+                    break;
+                case 5:
+                    Debug.Log("bridge");
+
+                    crewRoom.style.visibility = Visibility.Visible;
+                    break;
+                case 6:
+                    Debug.Log("bridge");
+
+                    loungeRoom.style.visibility = Visibility.Visible;
+                    break;
+                case 7:
+                    Debug.Log("bridge");
+
+                    medbay.style.visibility = Visibility.Visible;
+                    break;
+                case 8:
+                    Debug.Log("bridge");
+
+                    oxygenRoomBook.style.visibility = Visibility.Visible;
+                    break;
+                case 9:
+                    Debug.Log("bridge");
+
+                    oxygenRoomCodePad.style.visibility = Visibility.Visible;
+                    break;
+            }
         }
 
         #region Timerbar
 
+        private float beginingtime;
+        private Label timer;
+        public void GetTimebar()
+        {
+            timer = Panels[(int)UiEnum.Enviorment].Q<Label>("Timer");
+            timer.text = "999";
+        }
 
+        private void GetDeltaTime()
+        {
+            beginingtime = Time.time;
+        }
 
         #endregion
 
@@ -140,11 +238,13 @@ namespace Managers
                 InventoryItems.Add(item);
                 m_SlotContainer.Add(item);
             }
+            Debug.Log(Panels[(int)UiEnum.NormalGame].Q<Button>("Inventory"));
         }
 
 
         public void InventoryToggle()
         {
+            Debug.Log("InventoryToggle");
             inventory.style.visibility = inventory.style.visibility == Visibility.Visible
                 ? Visibility.Hidden
                 : Visibility.Visible;
@@ -231,7 +331,8 @@ namespace Managers
 
         public void StartNewGame()
         {
-            SceneManager.LoadScene(1);
+            GetDeltaTime();
+            GameController.Instance.EnviormentChange((0));
             ChangePanel(UiEnum.NormalGame);
         }
 
@@ -243,15 +344,27 @@ namespace Managers
         #endregion
         
         #region items
-
+        
+        private List<VisualElement> buttonContainer;
+        private List<Button> items;
         public void GetItemRefrences()
         {
-            List<Button> items = Panels[(int)UiEnum.NormalGame].Query<Button>(className: "item").ToList();
+            buttonContainer = Panels[(int)UiEnum.Items].Query<VisualElement>(className: "Container").ToList();
+            items = Panels[(int)UiEnum.Items].Query<Button>(className: "item").ToList();
             for (int i=0;i <items.Count;i++)
             {
                 items[i].AddToClassList("duBistEs");
                 items[i].userData = FirstNodes[i];
                 items[i].clicked += ItemsOnClicked;
+                items[i].style.visibility = Visibility.Hidden;
+            }
+        }
+
+        public void EnabledItems(int itemindex)
+        {
+            for (int i=0;i <items.Count;i++)
+            {
+                items[i].parent.style.visibility = Visibility.Hidden;
             }
         }
 
@@ -269,16 +382,15 @@ namespace Managers
             Vector2 currentpostion = new Vector2(item.resolvedStyle.left, item.resolvedStyle.top);
             while (currentpostion.x <= 7.915752f && currentpostion.y >= -4.330247f)
             {
+                Debug.Log("ItemInWhile"+ currentpostion);
                 currentpostion = Vector3.LerpUnclamped(currentpostion, new Vector3(8.37f, -4.55f, -1), 0.05f);
                 item.style.top = currentpostion.x;
                 item.style.left = currentpostion.y;
                 yield return new WaitForSeconds(0.02f);
             }
-
             Debug.Log("Angekommen =)");
             item.parent.Remove(item);
         }
-
         #endregion
         
         #region Dialogue

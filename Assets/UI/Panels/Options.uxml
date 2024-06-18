@@ -4,6 +4,6 @@
         <ui:Slider picking-mode="Ignore" label="GeneralVolume" value="42" high-value="100" name="MasterSound" style="position: relative; left: 25%; top: 48%; max-width: 50%; color: rgb(255, 255, 255); font-size: 28px; -unity-text-outline-color: rgba(0, 45, 255, 0);" />
         <ui:Slider picking-mode="Ignore" label="Musik" value="42" high-value="100" name="MusicSound" style="top: 50%; left: 25%; max-width: 50%; font-size: 28px; color: rgb(255, 255, 255);" />
         <ui:Slider picking-mode="Ignore" label="SoundEffects" value="42" high-value="100" name="SFXSound" style="top: 52%; left: 25%; max-width: 50%; font-size: 28px; color: rgb(255, 255, 255);" />
-        <ui:Label tabindex="-1" text="Options" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" style="height: 13px; width: 1237px; font-size: 200px; color: rgb(255, 255, 255); left: 30%; top: -10%;" />
+        <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" style="height: 274px; width: 1237px; font-size: 200px; color: rgb(255, 255, 255); left: 20%; top: -10%; background-image: url(&apos;project://database/Assets/Sprites/MainMenuUI/WithColor/Options.png?fileID=2800000&amp;guid=1918b9d7a2f5acf439a998daf20e7952&amp;type=3#Options&apos;);" />
     </ui:VisualElement>
 </ui:UXML>
