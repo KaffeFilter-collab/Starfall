@@ -1,0 +1,655 @@
+fileFormatVersion: 2
+guid: 70477c9b09a2f754a8a436b1815da96a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: QuitButtonSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 270
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 046e293935959c147983f9c166568f9b
+      internalID: -1547972346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuitButtonSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 270
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2463fe00f7dfe4748be2cd519e28c484
+      internalID: -1770446228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuitButtonSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 270
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f87a6736b79bb9d42baf5dc249aaf440
+      internalID: 829730934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuitButtonSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 270
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db3f69d452d8a1a41a4725c0b81860b3
+      internalID: 326280130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuitButtonSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 270
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85c42f44e09b469498b16b9a741934b8
+      internalID: -152171060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuitButtonSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 270
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e892210f02af922499424fa5f092b34f
+      internalID: 936561492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuitButtonSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 180
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90a77e79bef8dc7489e0a0020f25c34d
+      internalID: 419212406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuitButtonSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 180
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c31498a9328edb249bf406e082bb35aa
+      internalID: 1874997178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuitButtonSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 180
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d04ad22113a7f1f4eb7b7b1d1b24e1dc
+      internalID: 972776831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuitButtonSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 180
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84c8148be91819749ac59eb91d426650
+      internalID: 118340730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuitButtonSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 180
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b926b7a13f08ce54e8f60496c9614b12
+      internalID: -2060656106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuitButtonSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 180
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62cf1f9f9bd57514ca34f4b044ad5319
+      internalID: 813811295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuitButtonSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 90
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8fad0efdbc6b6c4fbf9179ca3666c0d
+      internalID: -1353674741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuitButtonSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 90
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 630f443fcb006bd4f9628e7a36d7e719
+      internalID: -1580853470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuitButtonSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 90
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19e17d16c81996a4ea29592d302faf6c
+      internalID: -2139794668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuitButtonSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 90
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2afb3d0d8224a624f94c1341c895f3c9
+      internalID: 1065760253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuitButtonSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 90
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b29909f7d9c2b754b9bd105d4e735083
+      internalID: 396632761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuitButtonSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 90
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e1c2628cbfb19d45a11ebf1d470f61e
+      internalID: 1922631940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuitButtonSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be37ca875e5730e49b819ce5b1bbce7b
+      internalID: -2093676828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuitButtonSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 0
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7de43d52500f204cb40ed525f899ae1
+      internalID: -1805677561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuitButtonSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93fb4f0a03aa38c47a3227319ed7191c
+      internalID: 629788695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuitButtonSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 0
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cf0747b0ef540b43adfafe8078c6e4f
+      internalID: -2044822057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuitButtonSpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a365c1f57fa8cb46b51a7125bb8c5e0
+      internalID: 391472654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: QuitButtonSpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 0
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1637444096632e4bab0a698da1d8c6d
+      internalID: 1882229669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      QuitButtonSpriteSheet_0: -1547972346
+      QuitButtonSpriteSheet_1: -1770446228
+      QuitButtonSpriteSheet_10: -2060656106
+      QuitButtonSpriteSheet_11: 813811295
+      QuitButtonSpriteSheet_12: -1353674741
+      QuitButtonSpriteSheet_13: -1580853470
+      QuitButtonSpriteSheet_14: -2139794668
+      QuitButtonSpriteSheet_15: 1065760253
+      QuitButtonSpriteSheet_16: 396632761
+      QuitButtonSpriteSheet_17: 1922631940
+      QuitButtonSpriteSheet_18: -2093676828
+      QuitButtonSpriteSheet_19: -1805677561
+      QuitButtonSpriteSheet_2: 829730934
+      QuitButtonSpriteSheet_20: 629788695
+      QuitButtonSpriteSheet_21: -2044822057
+      QuitButtonSpriteSheet_22: 391472654
+      QuitButtonSpriteSheet_23: 1882229669
+      QuitButtonSpriteSheet_3: 326280130
+      QuitButtonSpriteSheet_4: -152171060
+      QuitButtonSpriteSheet_5: 936561492
+      QuitButtonSpriteSheet_6: 419212406
+      QuitButtonSpriteSheet_7: 1874997178
+      QuitButtonSpriteSheet_8: 972776831
+      QuitButtonSpriteSheet_9: 118340730
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
