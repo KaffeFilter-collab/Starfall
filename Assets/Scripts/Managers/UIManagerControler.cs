@@ -116,7 +116,7 @@ namespace Managers
             bridge = Panels[(int)UiEnum.Items].Q<VisualElement>("Bridge");
             firsthallway = Panels[(int)UiEnum.Items].Q<VisualElement>("1Hallway");
             secondHallway = Panels[(int)UiEnum.Items].Q<VisualElement>("2Hallway");
-            captain = Panels[(int)UiEnum.Items].Q<VisualElement>("Captain");
+            captain = Panels[(int)UiEnum.Items].Q<VisualElement>("Captian");
             coCaptain = Panels[(int)UiEnum.Items].Q<VisualElement>("CoCaptain");
             crewRoom = Panels[(int)UiEnum.Items].Q<VisualElement>("CrewRoom");
             loungeRoom = Panels[(int)UiEnum.Items].Q<VisualElement>("LoungeRoom");
@@ -130,6 +130,10 @@ namespace Managers
             Panels[(int)UiEnum.Enviorment].style.visibility = Visibility.Visible;
             Panels[(int)UiEnum.Enviorment].style.display = DisplayStyle.Flex;
             Panels[(int)UiEnum.Enviorment].style.backgroundImage = new StyleBackground(texture);
+
+            Panels[(int)UiEnum.Items].style.visibility = Visibility.Visible;
+            Panels[(int)UiEnum.Items].style.display = DisplayStyle.Flex;
+            
             switch (foritem)
             {
                 case 0:
@@ -138,45 +142,45 @@ namespace Managers
                     break;
                 case 1:
                     firsthallway.style.visibility = Visibility.Visible;
-                    Debug.Log("bridge");
+                    Debug.Log("2");
                     break;
                 case 2:
                     secondHallway.style.visibility = Visibility.Visible;
-                    Debug.Log("bridge");
+                    Debug.Log("3");
 
                     break;
                 case 3:
-                    Debug.Log("bridge");
+                    Debug.Log("4");
 
                     captain.style.visibility = Visibility.Visible;
                     break;
                 case 4:
-                    Debug.Log("bridge");
+                    Debug.Log("5");
 
                     coCaptain.style.visibility = Visibility.Visible;
                     break;
                 case 5:
-                    Debug.Log("bridge");
+                    Debug.Log("6");
 
                     crewRoom.style.visibility = Visibility.Visible;
                     break;
                 case 6:
-                    Debug.Log("bridge");
+                    Debug.Log("7");
 
                     loungeRoom.style.visibility = Visibility.Visible;
                     break;
                 case 7:
-                    Debug.Log("bridge");
+                    Debug.Log("8");
 
                     medbay.style.visibility = Visibility.Visible;
                     break;
                 case 8:
-                    Debug.Log("bridge");
+                    Debug.Log("9");
 
                     oxygenRoomBook.style.visibility = Visibility.Visible;
                     break;
                 case 9:
-                    Debug.Log("bridge");
+                    Debug.Log("10");
 
                     oxygenRoomCodePad.style.visibility = Visibility.Visible;
                     break;
@@ -350,11 +354,10 @@ namespace Managers
         public void GetItemRefrences()
         {
             buttonContainer = Panels[(int)UiEnum.Items].Query<VisualElement>(className: "Container").ToList();
-            items = Panels[(int)UiEnum.Items].Query<Button>(className: "item").ToList();
+            items = Panels[(int)UiEnum.Items].Query<Button>(className: "Interactable").ToList();
             for (int i=0;i <items.Count;i++)
             {
                 items[i].AddToClassList("duBistEs");
-                items[i].userData = FirstNodes[i];
                 items[i].clicked += ItemsOnClicked;
                 items[i].style.visibility = Visibility.Hidden;
             }

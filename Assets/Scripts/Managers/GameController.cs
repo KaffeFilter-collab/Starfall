@@ -135,7 +135,7 @@ public class GameController : MonoBehaviour
         if (!m_ItemDatabase.ContainsKey(item.GUID))
         {
             m_ItemDatabase.Add(item.GUID, item);
-            Debug.Log("Item {item.Name} added to the database.");
+            Debug.Log("Item"+ item.Name+"  added to the database.");
             OnInventoryChanged?.Invoke(new string[] { item.GUID }, InventoryChangeType.Pickup);
             Debug.Log(new string[] { item.GUID });
         }

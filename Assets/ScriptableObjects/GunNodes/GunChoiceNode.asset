@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 676f063305c2bae4a997b5004ec9d858, type: 3}
   m_Name: GunChoiceNode
   m_EditorClassIdentifier: 
-  m_DialogueLine: {fileID: 0}
-  m_Choices: []
+  m_DialogueLine: {fileID: 11400000, guid: 215948ba1c5962f419bb64f18d6bd11f, type: 2}
+  m_Choices:
+  - m_ChoicePreview: Yes
+    m_ChoiceNode: {fileID: 0}
+  - m_ChoicePreview: No
+    m_ChoiceNode: {fileID: 0}
