@@ -34,6 +34,7 @@ namespace Managers
             Dialogue,
             Options,
             Codepad,
+            Endings
         }
         
         [SerializeField]private List<ChoiceDialogueNode> FirstNodes;
@@ -94,13 +95,16 @@ namespace Managers
             CurrentPanel = newUI;
         }
 
+        [SerializeField] private Sprite erstickenending;
+        
         private void Update()
         {
             endtime -= Time.deltaTime;
 
             if (endtime <= 0.0f)
             {
-                Debug.Log("over");
+                ending.style.backgroundImage = Background.FromSprite(erstickenending);
+                ChangePanel(UiEnum.Endings);
             }
                 
         }
@@ -135,6 +139,8 @@ namespace Managers
         private Button _interactableBook;
         private Button _interactableCodePad;
 
+
+        private VisualElement ending;
         private List<VisualElement> OverarchingItemElements;
         public void GetItemsForItemChanges()
         {
@@ -185,6 +191,8 @@ namespace Managers
             _interactableMedBayLocker.clicked += InteractableMedBayLockerOnclicked;
             _interactableBook.clicked += InteractableBookOnclicked;
             _interactableCodePad.clicked += InteractableCodePadOnclicked;
+
+            ending = Panels[(int)UiEnum.Endings].Q<VisualElement>("Endings");
         }
 
         #region CBT
