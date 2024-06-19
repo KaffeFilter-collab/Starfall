@@ -1,9 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
-<engine:UXML
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:engine="UnityEngine.UIElements"
-    xmlns:editor="UnityEditor.UIElements"
-    xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd"
->
-    
-</engine:UXML>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/keypad.uss?fileID=7433441132597879392&amp;guid=3e59b554c6e1eb443bad47a387141fbd&amp;type=3#keypad" />
+    <ui:VisualElement style="height: 100%; justify-content: flex-start;">
+        <ui:VisualElement name="KeyPad" style="flex-grow: 1; width: 50%; height: 100%; left: 15%;">
+            <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Code" style="height: 115px; margin-top: 20px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px; padding-top: 10px; -unity-text-align: middle-center; font-size: 25px; -unity-font-style: bold; left: 25%; color: rgb(255, 0, 0);" />
+            <ui:VisualElement name="Keys" style="flex-grow: 1; flex-wrap: wrap; flex-direction: row; justify-content: center; width: 400px; align-items: stretch; left: 55%;">
+                <ui:Button text="1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="One" class="key" style="-unity-font-style: bold;" />
+                <ui:Button text="2" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Two" class="key" />
+                <ui:Button text="3" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Three" class="key" />
+                <ui:Button text="4" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Four" class="key" />
+                <ui:Button text="5" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Five" class="key" />
+                <ui:Button text="6" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Six" class="key" />
+                <ui:Button text="7" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Seven" class="key" />
+                <ui:Button text="8" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Eight" class="key" style="flex-direction: column;" />
+                <ui:Button text="9" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Nine" class="key" />
+                <ui:Button text="Reset" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Reset" class="key" />
+                <ui:Button text="0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Zero" class="key" />
+                <ui:Button text="Enter" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Enter" class="key" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Close" style="width: 40px;" />
+    </ui:VisualElement>
+</ui:UXML>

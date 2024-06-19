@@ -15,7 +15,7 @@ namespace Managers
 {
     public class UIManagerControler : MonoBehaviour
     {
-
+        private float endtime = 300f;
         public static UIManagerControler Instance { get; private set; }
         private UIDocument uiDocument;
         private VisualElement root;
@@ -46,8 +46,7 @@ namespace Managers
         [SerializeField] private DialogueChannel m_DialogueChannel;
 
         private DialogueNode m_NextNode = null;
-
-        [SerializeField]
+        
         private void Awake()
         {
             if (Instance is not null)
@@ -60,7 +59,7 @@ namespace Managers
             DontDestroyOnLoad(this);
             //End of thingy
 
-
+            
             uiDocument = GetComponent<UIDocument>();
             root = uiDocument.rootVisualElement;
             GetSetupPanels();
@@ -74,6 +73,7 @@ namespace Managers
             GetSoundSettings();
             GetTimebar();
             GetItemsForItemChanges();
+            SetupKeyPad();
             ChangePanel(StartPanel);
         }
 
@@ -96,9 +96,11 @@ namespace Managers
 
         private void Update()
         {
-            if (Time.time == Time.time + beginingtime)
+            endtime -= Time.deltaTime;
+
+            if (endtime <= 0.0f)
             {
-                timer.text = "100";
+                Debug.Log("over");
             }
                 
         }
@@ -191,12 +193,14 @@ namespace Managers
 
         private void InteractableCodePadOnclicked()
         {
-            throw new NotImplementedException();
+            ChangePanel(UiEnum.Codepad);
         }
 
+        [SerializeField] private Sprite _inventoryBookSprite;
+        [SerializeField] private string _stringInventoryBookSprrite;
         private void InteractableBookOnclicked()
         {
-            throw new NotImplementedException();
+            AddNewItem(_inventoryBookSprite,_stringInventoryBookSprrite);
         }
 
         private void InteractableMedBayLockerOnclicked()
@@ -209,19 +213,25 @@ namespace Managers
             throw new NotImplementedException();
         }
 
+        [SerializeField] private Sprite _gun;
+        [SerializeField] private string _stringGun;
         private void InteractableLockerOnclicked()
         {
-            throw new NotImplementedException();
+            AddNewItem(_gun,_stringGun);
         }
 
+        [SerializeField] private Sprite _note;
+        [SerializeField] private string _stringNote;
         private void InteractableNoteOnclicked()
         {
-            throw new NotImplementedException();
+            AddNewItem(_note,_stringNote);
         }
 
+        [SerializeField] private Sprite _heroin;
+        [SerializeField] private string _stringHeroin;
         private void InteractableHeroinOnclicked()
         {
-            throw new NotImplementedException();
+            AddNewItem(_heroin,_stringHeroin);
         }
 
         private void DoorHallwayOnclicked()
@@ -252,7 +262,7 @@ namespace Managers
 
         private void DoorClosedOnclicked()
         {
-            throw new NotImplementedException();
+            GameController.Instance.EnviormentChange(8);
         }
 
         private void DoorMedbayOnclicked()
@@ -273,6 +283,18 @@ namespace Managers
         private void NotworkingOnclicked()
         {
             throw new NotImplementedException();
+        }
+        void AddNewItem(Sprite icon,String itemName)
+        {
+            ItemDetails newItem = new ItemDetails()
+            {
+                Name = itemName,
+                GUID = System.Guid.NewGuid().ToString(),
+                Icon = icon,
+            
+            };
+            GameController.AddItemToDatabase(newItem);
+            GameController.OnInventoryChanged?.Invoke(new string[] { newItem.GUID }, InventoryChangeType.Pickup); 
         }
 
         #endregion
@@ -305,23 +327,26 @@ namespace Managers
                 case 1:
                     firsthallway.style.display = DisplayStyle.Flex;
                     firsthallway.style.visibility = Visibility.Visible;
+                    Debug.Log("1");
                     _doorMedbay.style.display = DisplayStyle.Flex;
                     _doorClosed.style.display = DisplayStyle.Flex;
                     _doorBridge.style.display = DisplayStyle.Flex;
                     _doorLounge.style.display = DisplayStyle.Flex;
                     
                     _doorMedbay.style.visibility = Visibility.Visible;
-                    _doorClosed.style.visibility = Visibility.Visible ;
+                    _doorClosed.style.visibility = Visibility.Visible;
                     _doorBridge.style.visibility = Visibility.Visible;
                     _doorLounge.style.visibility = Visibility.Visible;
                     break;
                 case 2:
                     secondHallway.style.visibility = Visibility.Visible;
                     secondHallway.style.display = DisplayStyle.Flex;
+                    Debug.Log(foritem + " SecondHallway");
                     _doorCrew.style.display = DisplayStyle.Flex;
                     _doorCaptain.style.display = DisplayStyle.Flex;
                     _doorCoCaptainRoom.style.display = DisplayStyle.Flex;
-                    
+                    _doorHallway.style.display = DisplayStyle.Flex;
+                    _doorHallway.style.visibility = Visibility.Visible;
                     _doorCrew.style.visibility = Visibility.Visible;
                     _doorCaptain.style.visibility = Visibility.Visible;
                     _doorCoCaptainRoom.style.visibility = Visibility.Visible;
@@ -546,7 +571,7 @@ namespace Managers
         public void EnabledItems(int itemindex)
         {
             for (int i=0;i <items.Count;i++)
-            {
+            { 
                 items[i].parent.style.visibility = Visibility.Hidden;
             }
         }
@@ -555,25 +580,24 @@ namespace Managers
         {
             Debug.Log("clicked");
             Button button = Panels[(int)UiEnum.NormalGame].Q<Button>(className: "duBistEs");
-            StartCoroutine(GotoInventory(button));
+            //StartCoroutine(GotoInventory(button));
             // todo: move to end of coroutine
         }
 
-        IEnumerator GotoInventory(VisualElement item)
-        {
-            Debug.Log(item.resolvedStyle.top);
-            Vector2 currentpostion = new Vector2(item.resolvedStyle.left, item.resolvedStyle.top);
-            while (currentpostion.x <= 7.915752f && currentpostion.y >= -4.330247f)
-            {
-                Debug.Log("ItemInWhile"+ currentpostion);
-                currentpostion = Vector3.LerpUnclamped(currentpostion, new Vector3(8.37f, -4.55f, -1), 0.05f);
-                item.style.top = currentpostion.x;
-                item.style.left = currentpostion.y;
-                yield return new WaitForSeconds(0.02f);
-            }
-            Debug.Log("Angekommen =)");
-            item.parent.Remove(item);
-        }
+        //IEnumerator GotoInventory(VisualElement item)
+        //{
+        //    Vector2 currentpostion = new Vector2(item.resolvedStyle.left, item.resolvedStyle.top);
+          //  while (currentpostion.x <= 7.915752f && currentpostion.y >= -4.330247f)
+          //  {
+          //      Debug.Log("ItemInWhile"+ currentpostion);
+            //    currentpostion = Vector3.LerpUnclamped(currentpostion, new Vector3(8.37f, -4.55f, -1), 0.05f);
+            //    item.style.top = currentpostion.x;
+            //    item.style.left = currentpostion.y;
+           //     yield return new WaitForSeconds(0.02f);
+           // }
+        //   // Debug.Log("Angekommen =)");
+        //    item.parent.Remove(item);
+        //}
         #endregion
         
         #region Dialogue
@@ -620,6 +644,62 @@ namespace Managers
             _music.RegisterCallback<ChangeEvent<float>>((evt) => AudioManager.Instance.SetVolume(AudioManager.MixerGroups.MusicVolume, evt.newValue));
             _sfx.RegisterCallback<ChangeEvent<float>>((evt) => AudioManager.Instance.SetVolume(AudioManager.MixerGroups.SfxVolume, evt.newValue));
         }
+         #endregion
+
+         public bool OxygenisFinite;
+         #region Numpad
+         private Label _code;
+
+         private void SetupKeyPad() {
+            _code = Panels[(int) UiEnum.Codepad].Q<Label>("Code");
+            _code.text = "";
+            Panels[(int) UiEnum.Codepad].Q<Button>("One").clicked += NumberOne;
+            Panels[(int) UiEnum.Codepad].Q<Button>("Two").clicked += NumberTwo;
+            Panels[(int) UiEnum.Codepad].Q<Button>("Three").clicked += NumberThree;
+            Panels[(int) UiEnum.Codepad].Q<Button>("Four").clicked += NumberFour;
+            Panels[(int) UiEnum.Codepad].Q<Button>("Five").clicked += NumberFive;
+            Panels[(int) UiEnum.Codepad].Q<Button>("Six").clicked += NumberSix;
+            Panels[(int) UiEnum.Codepad].Q<Button>("Seven").clicked += NumberSeven;
+            Panels[(int) UiEnum.Codepad].Q<Button>("Eight").clicked += NumberEight;
+            Panels[(int) UiEnum.Codepad].Q<Button>("Nine").clicked += NumberNine;
+            Panels[(int) UiEnum.Codepad].Q<Button>("Zero").clicked += NumberZero;
+            Panels[(int) UiEnum.Codepad].Q<Button>("Reset").clicked += Reset;
+            Panels[(int) UiEnum.Codepad].Q<Button>("Enter").clicked += Enter;
+        }
+
+        private void NumberOne() => _code.text += CheckNumberLength() ? "1" : "";
+        private void NumberTwo() => _code.text += CheckNumberLength() ? "2" : "";
+        private void NumberThree() => _code.text += CheckNumberLength() ? "3" : "";
+        private void NumberFour() => _code.text += CheckNumberLength() ? "4" : "";
+        private void NumberFive() => _code.text += CheckNumberLength() ? "5" : "";
+        private void NumberSix() => _code.text += CheckNumberLength() ? "6" : "";
+        private void NumberSeven() => _code.text += CheckNumberLength() ? "7" : "";
+        private void NumberEight() => _code.text += CheckNumberLength() ? "8" : "";
+        private void NumberNine() => _code.text += CheckNumberLength() ? "9" : "";
+        private void NumberZero() => _code.text += CheckNumberLength() ? "0" : "";
+        private void Reset() => _code.text = "";
+
+        private int tryes;
+        private void Enter() {
+            if (tryes <= 2)
+            {
+                
+            if (Convert.ToInt32(_code.text) == 6929)
+            {
+                OxygenisFinite = false;
+                ChangePanel(UiEnum.NormalGame);
+            }
+
+            tryes++;
+            }
+            else
+            {
+                _interactableCodePad.clicked -= InteractableCodePadOnclicked;
+                ChangePanel(UiEnum.NormalGame);
+            }
+        }
+        private bool CheckNumberLength() => _code.text.Length < 4;
+
          #endregion
     }
 

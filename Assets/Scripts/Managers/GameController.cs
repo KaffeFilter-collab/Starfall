@@ -21,18 +21,18 @@ public enum InventoryChangeType
     Pickup,
     Drop
 }
-public delegate void OnInventoryChangedDelegate(string[] itemGuid, InventoryChangeType change);
+    public delegate void OnInventoryChangedDelegate(string[] itemGuid, InventoryChangeType change);
 
 /// <summary>
 /// Generates and controls access to the Item Database and Inventory Data
 /// </summary>
 public class GameController : MonoBehaviour
 {
+    public static  OnInventoryChangedDelegate OnInventoryChanged = delegate { };
     [SerializeField]
     public List<Sprite> IconSprites;
     private static Dictionary<string, ItemDetails> m_ItemDatabase = new Dictionary<string, ItemDetails>();
     private List<ItemDetails> m_PlayerInventory = new List<ItemDetails>();
-    public static event OnInventoryChangedDelegate OnInventoryChanged = delegate { };
     public static GameController Instance { get; private set; }
     [SerializeField]
     private List<Texture2D> enviormentList;

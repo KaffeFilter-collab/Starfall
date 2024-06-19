@@ -1,0 +1,6 @@
+.key {
+    width: 30%;
+    height: 150px;
+    font-size: 25px;
+    -unity-font-style: bold;
+}
