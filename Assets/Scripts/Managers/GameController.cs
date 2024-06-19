@@ -79,6 +79,7 @@ public class GameController : MonoBehaviour
     {
         UIManagerControler.Instance.EnabledItems(enviormentnumber);
         UIManagerControler.Instance.SetEnviorment(enviormentList[enviormentnumber] , enviormentnumber);
+        Debug.Log("GameManager Number: " + enviormentnumber + "; Texture: " + enviormentList[enviormentnumber].name);
     }
 
     /// <summary>

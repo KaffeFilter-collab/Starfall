@@ -39,6 +39,8 @@ namespace Managers
         [SerializeField]private List<ChoiceDialogueNode> FirstNodes;
         private List<VisualElement> Panels;
 
+        public Texture2D testTexture;
+        
         //DialougeSystem
         [SerializeField] private UIManagerControler m_ChoiceControllerPrefab;
         [SerializeField] private DialogueChannel m_DialogueChannel;
@@ -274,13 +276,13 @@ namespace Managers
         }
 
         #endregion
-
-
+        
         public void SetEnviorment(Texture2D texture , int foritem)
         {
             Panels[(int)UiEnum.Enviorment].style.visibility = Visibility.Visible;
             Panels[(int)UiEnum.Enviorment].style.display = DisplayStyle.Flex;
             Panels[(int)UiEnum.Enviorment].style.backgroundImage = new StyleBackground(texture);
+            Debug.Log(texture.name);
 
             Panels[(int)UiEnum.Items].style.visibility = Visibility.Visible;
             Panels[(int)UiEnum.Items].style.display = DisplayStyle.Flex;
@@ -303,7 +305,6 @@ namespace Managers
                 case 1:
                     firsthallway.style.display = DisplayStyle.Flex;
                     firsthallway.style.visibility = Visibility.Visible;
-                    Debug.Log("2");
                     _doorMedbay.style.display = DisplayStyle.Flex;
                     _doorClosed.style.display = DisplayStyle.Flex;
                     _doorBridge.style.display = DisplayStyle.Flex;
@@ -316,15 +317,13 @@ namespace Managers
                     break;
                 case 2:
                     secondHallway.style.visibility = Visibility.Visible;
-                    Debug.Log("3");
+                    secondHallway.style.display = DisplayStyle.Flex;
                     _doorCrew.style.display = DisplayStyle.Flex;
                     _doorCaptain.style.display = DisplayStyle.Flex;
-                    firsthallway.style.display = DisplayStyle.Flex;
                     _doorCoCaptainRoom.style.display = DisplayStyle.Flex;
                     
                     _doorCrew.style.visibility = Visibility.Visible;
                     _doorCaptain.style.visibility = Visibility.Visible;
-                    firsthallway.style.visibility = Visibility.Visible;
                     _doorCoCaptainRoom.style.visibility = Visibility.Visible;
                     break;
                 case 3:
