@@ -32,7 +32,8 @@ namespace Managers
             NormalGame,
             PauseMenu,
             Dialogue,
-            Options
+            Options,
+            Codepad,
         }
         
         [SerializeField]private List<ChoiceDialogueNode> FirstNodes;
@@ -109,8 +110,28 @@ namespace Managers
         private VisualElement loungeRoom;
         private VisualElement medbay;
         private VisualElement oxygenRoomBook;
-        private VisualElement oxygenRoomCodePad;
 
+
+        private Button _notworking;
+        private Button _working;
+        private Button _doorLounge;
+        private Button _doorMedbay;
+        private Button _doorClosed;
+        private Button _doorBridge;
+        private Button _doorCrew;
+        private Button _doorCoCaptainRoom;
+        private Button _doorCaptain;
+        private Button _doorHallway;
+        private Button _interactableHeroin;
+        private Button _interactableNote;
+        private Button _interactableLocker;
+        private Button _interactableLoungeNotes;
+        private Button _interactable;
+        private Button _interactableMedBayLocker;
+        private Button _interactableBook;
+        private Button _interactableCodePad;
+
+        private List<VisualElement> OverarchingItemElements;
         public void GetItemsForItemChanges()
         {
             bridge = Panels[(int)UiEnum.Items].Q<VisualElement>("Bridge");
@@ -122,9 +143,139 @@ namespace Managers
             loungeRoom = Panels[(int)UiEnum.Items].Q<VisualElement>("LoungeRoom");
             medbay= Panels[(int)UiEnum.Items].Q<VisualElement>("Medbay");
             oxygenRoomBook = Panels[(int)UiEnum.Items].Q<VisualElement>("OxygenRoomBook");
-            oxygenRoomCodePad = Panels[(int)UiEnum.Items].Q<VisualElement>("OxyigenRoomCodePad");
+
+            OverarchingItemElements = Panels[(int)UiEnum.Items].Query<VisualElement>(classes: "Container").ToList();
+                
+            _notworking = Panels[(int)UiEnum.Items].Q<Button>("NotworkingButton");
+            _working = Panels[(int)UiEnum.Items].Q<Button>("WorkingButton");
+            _doorLounge = Panels[(int)UiEnum.Items].Q<Button>("DoorLounge");
+            _doorMedbay = Panels[(int)UiEnum.Items].Q<Button>("DoorMedbay");
+            _doorClosed = Panels[(int)UiEnum.Items].Q<Button>("DoorClosed");
+            _doorBridge = Panels[(int)UiEnum.Items].Q<Button>("BrdigeGate");
+            _doorCrew = Panels[(int)UiEnum.Items].Q<Button>("CrewDoor");
+            _doorCoCaptainRoom = Panels[(int)UiEnum.Items].Q<Button>("CoCaptainDoor");
+            _doorCaptain = Panels[(int)UiEnum.Items].Q<Button>("CaptainDoor");
+            _doorHallway = Panels[(int)UiEnum.Items].Q<Button>("Hallway1Door");
+            _interactableHeroin = Panels[(int)UiEnum.Items].Q<Button>("Heroin");
+            _interactableNote = Panels[(int)UiEnum.Items].Q<Button>("Note");
+            _interactableLocker = Panels[(int)UiEnum.Items].Q<Button>("Locker");
+            _interactableLoungeNotes = Panels[(int)UiEnum.Items].Q<Button>("LoungeNotes");
+            _interactableMedBayLocker = Panels[(int)UiEnum.Items].Q<Button>("MedbayLocker");
+            _interactableBook = Panels[(int)UiEnum.Items].Q<Button>("Book");
+            _interactableCodePad = Panels[(int)UiEnum.Items].Q<Button>("CodePad");
+
+            _notworking.clicked += NotworkingOnclicked;
+            _working.clicked += WorkingOnclicked;
+            _doorLounge.clicked += DoorLoungeOnclicked;
+            _doorMedbay.clicked += DoorMedbayOnclicked;
+            _doorClosed.clicked += DoorClosedOnclicked;
+            _doorBridge.clicked += DoorBridgeOnclicked;
+            _doorCrew.clicked += DoorCrewOnclicked;
+            _doorCoCaptainRoom.clicked += DoorCoCaptainRoomOnclicked;
+            _doorCaptain.clicked += DoorCaptainOnclicked;
+            _doorHallway.clicked += DoorHallwayOnclicked;
+            _interactableHeroin.clicked += InteractableHeroinOnclicked;
+            _interactableNote.clicked += InteractableNoteOnclicked;
+            _interactableLocker.clicked += InteractableLockerOnclicked;
+            _interactableLoungeNotes.clicked += InteractableLoungeNotesOnclicked;
+            _interactableMedBayLocker.clicked += InteractableMedBayLockerOnclicked;
+            _interactableBook.clicked += InteractableBookOnclicked;
+            _interactableCodePad.clicked += InteractableCodePadOnclicked;
+        }
+
+        #region CBT
+
+        
+
+        private void InteractableCodePadOnclicked()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void InteractableBookOnclicked()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void InteractableMedBayLockerOnclicked()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void InteractableLoungeNotesOnclicked()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void InteractableLockerOnclicked()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void InteractableNoteOnclicked()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void InteractableHeroinOnclicked()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void DoorHallwayOnclicked()
+        {
+            GameController.Instance.EnviormentChange(1);
+        }
+
+        private void DoorCaptainOnclicked()
+        {
+            GameController.Instance.EnviormentChange(3);
+        }
+
+        private void DoorCoCaptainRoomOnclicked()
+        {
+            GameController.Instance.EnviormentChange(4);
+        }
+
+        private void DoorCrewOnclicked()
+        {
+            GameController.Instance.EnviormentChange(5);
+        }
+
+        private void DoorBridgeOnclicked()
+        {
+            GameController.Instance.EnviormentChange(0);
 
         }
+
+        private void DoorClosedOnclicked()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void DoorMedbayOnclicked()
+        {
+            GameController.Instance.EnviormentChange(7);
+        }
+
+        private void DoorLoungeOnclicked()
+        {
+            GameController.Instance.EnviormentChange(6);
+        }
+
+        private void WorkingOnclicked()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void NotworkingOnclicked()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+
         public void SetEnviorment(Texture2D texture , int foritem)
         {
             Panels[(int)UiEnum.Enviorment].style.visibility = Visibility.Visible;
@@ -133,57 +284,86 @@ namespace Managers
 
             Panels[(int)UiEnum.Items].style.visibility = Visibility.Visible;
             Panels[(int)UiEnum.Items].style.display = DisplayStyle.Flex;
+            for (int i = 0; i < OverarchingItemElements.Count; i++)
+            {
+                OverarchingItemElements[i].style.display = DisplayStyle.None;
+                OverarchingItemElements[i].style.visibility = Visibility.Hidden;
+            }
             
             switch (foritem)
             {
                 case 0:
                     bridge.style.visibility = Visibility.Visible;
-                    Debug.Log("bridge");
+                    _notworking.style.display = DisplayStyle.Flex;
+                    _working.style.display = DisplayStyle.Flex;
+
+                    _notworking.style.visibility = Visibility.Visible;
+                    _working.style.visibility = Visibility.Visible;
                     break;
                 case 1:
                     firsthallway.style.display = DisplayStyle.Flex;
                     firsthallway.style.visibility = Visibility.Visible;
                     Debug.Log("2");
+                    _doorMedbay.style.display = DisplayStyle.Flex;
+                    _doorClosed.style.display = DisplayStyle.Flex;
+                    _doorBridge.style.display = DisplayStyle.Flex;
+                    _doorLounge.style.display = DisplayStyle.Flex;
+                    
+                    _doorMedbay.style.visibility = Visibility.Visible;
+                    _doorClosed.style.visibility = Visibility.Visible ;
+                    _doorBridge.style.visibility = Visibility.Visible;
+                    _doorLounge.style.visibility = Visibility.Visible;
                     break;
                 case 2:
                     secondHallway.style.visibility = Visibility.Visible;
                     Debug.Log("3");
-
+                    _doorCrew.style.display = DisplayStyle.Flex;
+                    _doorCaptain.style.display = DisplayStyle.Flex;
+                    firsthallway.style.display = DisplayStyle.Flex;
+                    _doorCoCaptainRoom.style.display = DisplayStyle.Flex;
+                    
+                    _doorCrew.style.visibility = Visibility.Visible;
+                    _doorCaptain.style.visibility = Visibility.Visible;
+                    firsthallway.style.visibility = Visibility.Visible;
+                    _doorCoCaptainRoom.style.visibility = Visibility.Visible;
                     break;
                 case 3:
-                    Debug.Log("4");
-
+                    _interactableHeroin.style.visibility = Visibility.Visible;
+                    _interactableHeroin.style.display = DisplayStyle.Flex;
                     captain.style.visibility = Visibility.Visible;
                     break;
                 case 4:
                     Debug.Log("5");
+                    _interactableNote.style.visibility = Visibility.Visible;
+                    _interactableNote.style.display = DisplayStyle.Flex;
 
                     coCaptain.style.visibility = Visibility.Visible;
                     break;
                 case 5:
                     Debug.Log("6");
-
+                    _interactableLocker.style.visibility = Visibility.Visible;
+                    _interactableLocker.style.display = DisplayStyle.Flex;
                     crewRoom.style.visibility = Visibility.Visible;
                     break;
                 case 6:
                     Debug.Log("7");
-
+                    _interactableLoungeNotes.style.visibility = Visibility.Visible;
+                    _interactableLoungeNotes.style.display = DisplayStyle.Flex;
                     loungeRoom.style.visibility = Visibility.Visible;
                     break;
                 case 7:
                     Debug.Log("8");
-
+                    _interactableMedBayLocker.style.visibility = Visibility.Visible;
+                    _interactableMedBayLocker.style.display = DisplayStyle.Flex;
                     medbay.style.visibility = Visibility.Visible;
                     break;
                 case 8:
                     Debug.Log("9");
-
+                    _interactableBook.style.visibility = Visibility.Visible;
+                    _interactableBook.style.display = DisplayStyle.Flex;
+                    _interactableCodePad.style.display = DisplayStyle.Flex;
+                    _interactableCodePad.style.visibility = Visibility.Visible;
                     oxygenRoomBook.style.visibility = Visibility.Visible;
-                    break;
-                case 9:
-                    Debug.Log("10");
-
-                    oxygenRoomCodePad.style.visibility = Visibility.Visible;
                     break;
             }
         }
@@ -211,13 +391,13 @@ namespace Managers
 
         public void GetArrowRefrences()
         {
-            Panels[(int)UiEnum.NormalGame].Q<Button>("ArrowLeft").clicked += GoLeft;
+            Panels[(int)UiEnum.NormalGame].Q<Button>("ArrowLeft").clicked += ()=>GoLeft(2);
             Panels[(int)UiEnum.NormalGame].Q<Button>("ArrowRight").clicked += GoRight;
         }
 
-        public void GoLeft()
+        public void GoLeft(int test)
         {
-            if (currentRoom != 0) GameController.Instance.EnviormentChange(currentRoom--);
+            if (currentRoom != 0) GameController.Instance.EnviormentChange(2);
         }
 
         public void GoRight()
