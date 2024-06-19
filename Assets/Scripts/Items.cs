@@ -11,30 +11,36 @@ using Image = UnityEngine.UI.Image;
 
 public class Items : MonoBehaviour
 {
+    [SerializeField];
+    [SerializeField] private string itemName;
      private Vector3 currentpostion;
      [SerializeField] private GameController gameController;
-     public List<Sprite> IconSprites;
      public Sprite icon;
+     private bool clickable;
      private void Awake()
      {
+         clickable = true;
          currentpostion = transform.position;
          icon = GetComponent<SpriteRenderer>().sprite;
      }
 
      private void OnMouseDown()
     {
+        if (clickable)
+        {
         AddNewItem(icon);
         StartCoroutine(GotoInventory());
+        }
     }
     void AddNewItem(Sprite icon)
     {
         Debug.Log("added itemdetails");
         ItemDetails newItem = new ItemDetails()
         {
-            Name = "Magic Wand",
+            Name = itemName,
             GUID = System.Guid.NewGuid().ToString(),
             Icon = icon,
-            CanDrop = true
+            
         };
         Debug.Log(newItem.GUID + " GuidInItems");
         GameController.AddItemToDatabase(newItem);
@@ -43,6 +49,7 @@ public class Items : MonoBehaviour
 
     IEnumerator GotoInventory()
     {
+        clickable = false;
         while (transform.position.x <= 7.915752f && transform.position.y >= -4.330247f)
         {
             transform.position = Vector3.LerpUnclamped(currentpostion,new Vector3(8.37f,-4.55f,-1),0.05f);;

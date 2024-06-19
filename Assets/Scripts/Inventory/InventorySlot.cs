@@ -13,6 +13,8 @@ namespace Assets.Scripts
 {
     public class InventorySlot : VisualElement
     {
+        
+        
         public Image Icon;
         public string ItemGuid = "";
 
@@ -26,7 +28,16 @@ namespace Assets.Scripts
             Icon.AddToClassList("slotIcon");
             AddToClassList("slotContainer");
         }
-        
+
+        private void OnPointerDown(PointerDownEvent evt)
+        {
+            //Not the left mouse button or this is an empty slotIn
+            if (evt.button != 0 || ItemGuid.Equals(""))
+            {
+                return;
+            }
+            
+        }
 
         /// <summary>
         /// Sets the Icon and GUID properties
@@ -46,7 +57,7 @@ namespace Assets.Scripts
             ItemGuid = "";
             Icon.image = null;
         }
-
+        
         #region UXML
         [Preserve]
         public new class UxmlFactory : UxmlFactory<InventorySlot, UxmlTraits> { }

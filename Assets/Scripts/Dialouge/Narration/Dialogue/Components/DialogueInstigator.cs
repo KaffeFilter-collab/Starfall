@@ -28,12 +28,10 @@ public class DialogueInstigator : MonoBehaviour
     {
         m_DialogueChannel.OnDialogueNodeRequested -= m_DialogueSequencer.StartDialogueNode;
         m_DialogueChannel.OnDialogueRequested -= m_DialogueSequencer.StartDialogue;
-
         DialogueSequencer.OnDialogueNodeEnd -= m_DialogueChannel.RaiseDialogueNodeEnd;
         DialogueSequencer.OnDialogueNodeStart -= m_DialogueChannel.RaiseDialogueNodeStart;
         DialogueSequencer.OnDialogueEnd -= OnDialogueEnd;
         DialogueSequencer.OnDialogueStart -= OnDialogueStart;
-
         m_DialogueSequencer = null;
     }
 
@@ -49,7 +47,6 @@ public class DialogueInstigator : MonoBehaviour
     {
         m_FlowChannel.RaiseFlowStateRequest(m_CachedFlowState);
         m_CachedFlowState = null;
-
         m_DialogueChannel.RaiseDialogueEnd(dialogue);
     }
 }

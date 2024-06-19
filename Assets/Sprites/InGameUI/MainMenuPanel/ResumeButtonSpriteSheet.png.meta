@@ -1,0 +1,655 @@
+fileFormatVersion: 2
+guid: 559097002566e0c4cb4bd0c22050b3f7
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ResumeButtonSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 276
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aecbc1406c794764fabb8e681ead01c5
+      internalID: 1461324638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ResumeButtonSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 276
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8da0ea8db92bab41b15435a9076b7d5
+      internalID: -161565322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ResumeButtonSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 276
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5c737da24e88ec4ca425b496ac06b98
+      internalID: -1751042377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ResumeButtonSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 276
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31f969f31fb314045bc0b3c582b54b46
+      internalID: -1344425065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ResumeButtonSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 276
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b907b6cb8adf1949a2baa9f24edca2f
+      internalID: -796270807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ResumeButtonSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 276
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 953b7e240453c6946bc99280b5eafe44
+      internalID: -1665573744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ResumeButtonSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 184
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14dd9659ae481c64e81cc55c71457e37
+      internalID: -1469976602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ResumeButtonSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 184
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d9a3e95cd8809447998aedc3284e458
+      internalID: 1587134454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ResumeButtonSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 184
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e395dcf8062007446919a627999385cc
+      internalID: -423929183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ResumeButtonSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 184
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c9ad2a0419be4b45a3c7be9eccb9f71
+      internalID: 1952567749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ResumeButtonSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 184
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 856b45b709516cf4499b78b55094e189
+      internalID: -1568259927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ResumeButtonSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 184
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b622cdc9ee345f348b7855324aa4a4a0
+      internalID: -1151893867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ResumeButtonSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 92
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7217e10b65bde6843b94f7ad6e0a96c2
+      internalID: 1335679956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ResumeButtonSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 92
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a36e8a6d10bf27c4b82651bc83a6747d
+      internalID: -1296689516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ResumeButtonSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 92
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a24fd42fe7823af4b8afa8105af18fbe
+      internalID: -1780270370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ResumeButtonSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 92
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38131c3a3c6b6cb449a0e3234709b3e2
+      internalID: -1578534540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ResumeButtonSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 92
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1016ef7f4c022684bac3b77ef3b734d2
+      internalID: -536776903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ResumeButtonSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 92
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44e9a971c2612b445b28238f3ee47d29
+      internalID: -134943222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ResumeButtonSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 558376789b4715847a54d2bda286c7f1
+      internalID: 492427145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ResumeButtonSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 0
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06254434a2036444c81074d51af47f8a
+      internalID: -795370793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ResumeButtonSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af1c23fb85ece9947841a788eeed1be1
+      internalID: -1870991793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ResumeButtonSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 0
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 917646aed88ca2c429ca411eea46be8c
+      internalID: 940213596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ResumeButtonSpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ed668b05951e9b478bc0faf02ce5030
+      internalID: 1422569204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ResumeButtonSpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 0
+        width: 211
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2bb70aa9af5a69428a3fb5a0e7945d1
+      internalID: 284508253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ResumeButtonSpriteSheet_0: 1461324638
+      ResumeButtonSpriteSheet_1: -161565322
+      ResumeButtonSpriteSheet_10: -1568259927
+      ResumeButtonSpriteSheet_11: -1151893867
+      ResumeButtonSpriteSheet_12: 1335679956
+      ResumeButtonSpriteSheet_13: -1296689516
+      ResumeButtonSpriteSheet_14: -1780270370
+      ResumeButtonSpriteSheet_15: -1578534540
+      ResumeButtonSpriteSheet_16: -536776903
+      ResumeButtonSpriteSheet_17: -134943222
+      ResumeButtonSpriteSheet_18: 492427145
+      ResumeButtonSpriteSheet_19: -795370793
+      ResumeButtonSpriteSheet_2: -1751042377
+      ResumeButtonSpriteSheet_20: -1870991793
+      ResumeButtonSpriteSheet_21: 940213596
+      ResumeButtonSpriteSheet_22: 1422569204
+      ResumeButtonSpriteSheet_23: 284508253
+      ResumeButtonSpriteSheet_3: -1344425065
+      ResumeButtonSpriteSheet_4: -796270807
+      ResumeButtonSpriteSheet_5: -1665573744
+      ResumeButtonSpriteSheet_6: -1469976602
+      ResumeButtonSpriteSheet_7: 1587134454
+      ResumeButtonSpriteSheet_8: -423929183
+      ResumeButtonSpriteSheet_9: 1952567749
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

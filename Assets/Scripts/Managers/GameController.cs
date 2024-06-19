@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Managers;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 [Serializable]
@@ -40,9 +42,13 @@ public class GameController : MonoBehaviour
         Bridge,
         Hallway1,
         Hallway2,
-        CoCaptain,
-        Oxygenroom,
-        OxygenroomWithEnergy
+        CaptianQuatier,
+        CoCaptainQuatier,
+        Crew,
+        Lounge,
+        Medbay,
+        StandartOxygenroom,
+        WithLightsOxygenroom
     }
 
     private void Awake()
@@ -55,6 +61,7 @@ public class GameController : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(this);
+        //PopulateDatabase();
     }
     
     private void OnDestroy()
@@ -70,8 +77,8 @@ public class GameController : MonoBehaviour
 
     public void EnviormentChange(int enviormentnumber)
     {
-        Debug.Log(enviormentnumber);
-        UIManagerControler.Instance.SetEnviorment(enviormentList[enviormentnumber]);
+        UIManagerControler.Instance.EnabledItems(enviormentnumber);
+        UIManagerControler.Instance.SetEnviorment(enviormentList[enviormentnumber] , enviormentnumber);
     }
 
     /// <summary>
@@ -81,26 +88,30 @@ public class GameController : MonoBehaviour
     {
         m_ItemDatabase.Add("8B0EF21A-F2D9-4E6F-8B79-031CA9E202BA", new ItemDetails()
         {
-            Name = "OxygenPlant",
+            Name = "LeonieBuch",
             GUID = "8B0EF21A-F2D9-4E6F-8B79-031CA9E202BA",
-            Icon = IconSprites.FirstOrDefault(x => x.name.Equals("prototyping_noteWallLeoRoommitCode")),
-            CanDrop = false
+            Icon = IconSprites.FirstOrDefault(x => x.name.Equals("prototypinf_leoniesbuch")),
         });
 
         m_ItemDatabase.Add("992D3386-B743-4CD3-9BB7-0234A057C265", new ItemDetails()
         {
-            Name = "Health Potion",
+            Name = "Gun",
             GUID = "992D3386-B743-4CD3-9BB7-0234A057C265",
-            Icon = IconSprites.FirstOrDefault(x => x.name.Equals("potion")),
-            CanDrop = true
+            Icon = IconSprites.FirstOrDefault(x => x.name.Equals("prototyping_gun")),
         });
 
         m_ItemDatabase.Add("1B9C6CAA-754E-412D-91BF-37F22C9A0E7B", new ItemDetails()
         {
-            Name = "Bottle of Poison",
+            Name = "Heroin",
             GUID = "1B9C6CAA-754E-412D-91BF-37F22C9A0E7B",
-            Icon = IconSprites.FirstOrDefault(x => x.name.Equals("poison")),
-            CanDrop = true
+            Icon = IconSprites.FirstOrDefault(x => x.name.Equals("prototyping_heroin")),
+        });
+
+        m_ItemDatabase.Add("1B9C6CAA-754E-412D-91BF-37F22C9A0E7C", new ItemDetails()
+        {
+            Name = "Notes",
+            GUID = "1B9C6CAA-754E-412D-91BF-37F22C9A0E7C",
+            Icon = IconSprites.FirstOrDefault(x =>x.name.Equals("prototyping_noteWallLeoRoommitCode"))
         });
         Debug.Log("datbase populated");
     }
@@ -124,7 +135,7 @@ public class GameController : MonoBehaviour
         if (!m_ItemDatabase.ContainsKey(item.GUID))
         {
             m_ItemDatabase.Add(item.GUID, item);
-            Debug.Log("Item {item.Name} added to the database.");
+            Debug.Log("Item"+ item.Name+"  added to the database.");
             OnInventoryChanged?.Invoke(new string[] { item.GUID }, InventoryChangeType.Pickup);
             Debug.Log(new string[] { item.GUID });
         }

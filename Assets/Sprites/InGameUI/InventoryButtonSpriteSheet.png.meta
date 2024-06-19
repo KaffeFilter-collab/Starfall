@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 21ac94c625626dd4b95f4bac2ef77933
+guid: 3181397904f764144a035e464085af5f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,15 +106,28 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_1
+      name: InventoryButtonSpriteSheet 1_0
       rect:
         serializedVersion: 2
-        x: 106
-        y: 312
+        x: 0
+        y: 276
         width: 211
         height: 86
       alignment: 0
@@ -124,18 +137,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a39bfcc073c9b743a0e68995d8d1bea
-      internalID: -1167567550
+      spriteID: dda2fd4b3de6d9a4bb68a2727008c855
+      internalID: 394675330
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_2
+      name: InventoryButtonSpriteSheet 1_1
       rect:
         serializedVersion: 2
-        x: 325
-        y: 312
+        x: 217
+        y: 276
         width: 211
         height: 86
       alignment: 0
@@ -145,18 +158,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69a6447310e86c94d8d1e87162f4eb5a
-      internalID: -376015200
+      spriteID: a2b5d7dff9a7d3e4384c053831bf6d58
+      internalID: 1519943361
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_3
+      name: InventoryButtonSpriteSheet 1_2
       rect:
         serializedVersion: 2
-        x: 544
-        y: 312
+        x: 434
+        y: 276
         width: 211
         height: 86
       alignment: 0
@@ -166,18 +179,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4bd53b90798ee9a4eaf963697ec4d3fe
-      internalID: -454758782
+      spriteID: 7a2de875601f3764481125b90d9afcf0
+      internalID: -1596043415
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_4
+      name: InventoryButtonSpriteSheet 1_3
       rect:
         serializedVersion: 2
-        x: 763
-        y: 312
+        x: 651
+        y: 276
         width: 211
         height: 86
       alignment: 0
@@ -187,18 +200,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bf0bbf61550b68428a8d7a4a4f5d420
-      internalID: -931035046
+      spriteID: 8f59968bf8b971242bbd89bc5d3cec09
+      internalID: 731270928
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_5
+      name: InventoryButtonSpriteSheet 1_4
       rect:
         serializedVersion: 2
-        x: 982
-        y: 312
+        x: 868
+        y: 276
         width: 211
         height: 86
       alignment: 0
@@ -208,18 +221,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82560cfe2fd5b884b8d8559c392a0e4a
-      internalID: -1937372426
+      spriteID: 147e3a23475ce6b479640c694bb0a643
+      internalID: 679421310
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_6
+      name: InventoryButtonSpriteSheet 1_5
       rect:
         serializedVersion: 2
-        x: 1201
-        y: 312
+        x: 1085
+        y: 276
         width: 211
         height: 86
       alignment: 0
@@ -229,18 +242,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c91e1e43e8f5d9544a3640003065b9e1
-      internalID: 890993349
+      spriteID: 9722abf21dcfc67488b584891dedbf34
+      internalID: -95084371
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_7
+      name: InventoryButtonSpriteSheet 1_6
       rect:
         serializedVersion: 2
-        x: 1420
-        y: 312
+        x: 0
+        y: 184
         width: 211
         height: 86
       alignment: 0
@@ -250,18 +263,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a69ad77be9cedd4d91abd0b4d879310
-      internalID: 1179829638
+      spriteID: 90aa569f4c2accd4ea3869e2107b5197
+      internalID: -1590674250
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_8
+      name: InventoryButtonSpriteSheet 1_7
       rect:
         serializedVersion: 2
-        x: 1639
-        y: 312
+        x: 217
+        y: 184
         width: 211
         height: 86
       alignment: 0
@@ -271,18 +284,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6dbc2df6e9e67dc44a0e41ce1e6d5a15
-      internalID: -1673491851
+      spriteID: 22482f88427328347a13d8ea56001b96
+      internalID: -1064624440
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_9
+      name: InventoryButtonSpriteSheet 1_8
       rect:
         serializedVersion: 2
-        x: 106
-        y: 209
+        x: 434
+        y: 184
         width: 211
         height: 86
       alignment: 0
@@ -292,18 +305,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3974e166f60c8cc4996868307e05fec4
-      internalID: -1883894070
+      spriteID: 6e04fd8270bab7a41bad04a42f350c17
+      internalID: 315139750
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_10
+      name: InventoryButtonSpriteSheet 1_9
       rect:
         serializedVersion: 2
-        x: 325
-        y: 209
+        x: 651
+        y: 184
         width: 211
         height: 86
       alignment: 0
@@ -313,18 +326,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3483954a6e31a045a026536744d26a8
-      internalID: 551833800
+      spriteID: 2e097c473addbb74f8f20a79f2e72559
+      internalID: -1772385875
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_11
+      name: InventoryButtonSpriteSheet 1_10
       rect:
         serializedVersion: 2
-        x: 544
-        y: 209
+        x: 868
+        y: 184
         width: 211
         height: 86
       alignment: 0
@@ -334,18 +347,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 698776d2fb98461479acc833be553902
-      internalID: -642756711
+      spriteID: 48ca107d01d0a6e45993d7306bc821f9
+      internalID: -1207110149
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_12
+      name: InventoryButtonSpriteSheet 1_11
       rect:
         serializedVersion: 2
-        x: 763
-        y: 209
+        x: 1085
+        y: 184
         width: 211
         height: 86
       alignment: 0
@@ -355,18 +368,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c337d523974ac7d40a16c804c75377f5
-      internalID: 402517345
+      spriteID: c60ed0871e7aed44cbc4a6e2f3181ee1
+      internalID: 79627710
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_13
+      name: InventoryButtonSpriteSheet 1_12
       rect:
         serializedVersion: 2
-        x: 982
-        y: 209
+        x: 0
+        y: 92
         width: 211
         height: 86
       alignment: 0
@@ -376,18 +389,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84ed0bf1eebd56f4f88bd65345e3aa2d
-      internalID: 1917799897
+      spriteID: f1f09ac5d25ff1c4bb76c361bf4db18e
+      internalID: 1930099842
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_14
+      name: InventoryButtonSpriteSheet 1_13
       rect:
         serializedVersion: 2
-        x: 1201
-        y: 209
+        x: 217
+        y: 92
         width: 211
         height: 86
       alignment: 0
@@ -397,18 +410,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 729a4d32ac2258441bfaf819aa4c2dcd
-      internalID: 717983478
+      spriteID: b9c3673188416dd46b1cca569066b663
+      internalID: 1134263472
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_15
+      name: InventoryButtonSpriteSheet 1_14
       rect:
         serializedVersion: 2
-        x: 1420
-        y: 209
+        x: 434
+        y: 92
         width: 211
         height: 86
       alignment: 0
@@ -418,18 +431,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8910fe3124911145a0a096050b25e31
-      internalID: 1869072511
+      spriteID: 03d80ea8ba193914886608df5066a95f
+      internalID: 771929262
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_16
+      name: InventoryButtonSpriteSheet 1_15
       rect:
         serializedVersion: 2
-        x: 1639
-        y: 209
+        x: 651
+        y: 92
         width: 211
         height: 86
       alignment: 0
@@ -439,18 +452,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fba0126553a9fd847afc9b5917a0e7ca
-      internalID: 1821027620
+      spriteID: c7118be1f16f7ed40add1dc0e5d58703
+      internalID: 1392701685
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_17
+      name: InventoryButtonSpriteSheet 1_16
       rect:
         serializedVersion: 2
-        x: 106
-        y: 106
+        x: 868
+        y: 92
         width: 211
         height: 86
       alignment: 0
@@ -460,18 +473,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 364200107bb275a4082de8206d32c7c4
-      internalID: 1323423206
+      spriteID: ca090c11e46bf0b4eb5b7b918f130e7d
+      internalID: -650790500
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_18
+      name: InventoryButtonSpriteSheet 1_17
       rect:
         serializedVersion: 2
-        x: 325
-        y: 106
+        x: 1085
+        y: 92
         width: 211
         height: 86
       alignment: 0
@@ -481,18 +494,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 584ad52fae244d44a9e9e78985f56296
-      internalID: -780469015
+      spriteID: c6989bfc2170ddd4aa799ff91946e793
+      internalID: 1575258013
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_19
+      name: InventoryButtonSpriteSheet 1_18
       rect:
         serializedVersion: 2
-        x: 544
-        y: 106
+        x: 0
+        y: 0
         width: 211
         height: 86
       alignment: 0
@@ -502,18 +515,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 832cc31ed18f8004ba2f0e81075be302
-      internalID: -1644968622
+      spriteID: ebaa64ff6b1405d429afac6d191c87a3
+      internalID: -625463093
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_20
+      name: InventoryButtonSpriteSheet 1_19
       rect:
         serializedVersion: 2
-        x: 763
-        y: 106
+        x: 217
+        y: 0
         width: 211
         height: 86
       alignment: 0
@@ -523,18 +536,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 912fca983f88a9449a1043637397f7e5
-      internalID: -9995108
+      spriteID: bd05fded30621b04fbb63a857d6699a4
+      internalID: -306863264
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_21
+      name: InventoryButtonSpriteSheet 1_20
       rect:
         serializedVersion: 2
-        x: 982
-        y: 106
+        x: 434
+        y: 0
         width: 211
         height: 86
       alignment: 0
@@ -544,18 +557,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f269dd8272666cf4889e76749504dd7b
-      internalID: 424873493
+      spriteID: f48b40fac694d5044ab602f4be3ad4b4
+      internalID: 1948573488
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_22
+      name: InventoryButtonSpriteSheet 1_21
       rect:
         serializedVersion: 2
-        x: 1201
-        y: 106
+        x: 651
+        y: 0
         width: 211
         height: 86
       alignment: 0
@@ -565,18 +578,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a9d0ec8507274b4c9b7f5e0d0cd6ad5
-      internalID: -86704836
+      spriteID: 293b22bf9b737f54087d2e5101f8ac9d
+      internalID: -1193512229
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_23
+      name: InventoryButtonSpriteSheet 1_22
       rect:
         serializedVersion: 2
-        x: 1420
-        y: 106
+        x: 868
+        y: 0
         width: 211
         height: 86
       alignment: 0
@@ -586,18 +599,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8927905cf5dec15478411b79294a3743
-      internalID: 1351598366
+      spriteID: d332ef06a6c9187438c34b8dc7d349ce
+      internalID: 1595888184
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_24
+      name: InventoryButtonSpriteSheet 1_23
       rect:
         serializedVersion: 2
-        x: 1639
-        y: 106
+        x: 1085
+        y: 0
         width: 211
         height: 86
       alignment: 0
@@ -607,134 +620,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 319c7e775853ef84a9da264d47c8f805
-      internalID: 1167186404
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_25
-      rect:
-        serializedVersion: 2
-        x: 106
-        y: 3
-        width: 211
-        height: 86
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1c553c1da7ba49743a422e540344443e
-      internalID: 588267512
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_26
-      rect:
-        serializedVersion: 2
-        x: 325
-        y: 3
-        width: 211
-        height: 86
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e8fcacd305dea054ca3d663a685120ce
-      internalID: -228254436
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_27
-      rect:
-        serializedVersion: 2
-        x: 544
-        y: 3
-        width: 211
-        height: 86
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2aa20f70c31b9ef49980c3d5a9d5e0d7
-      internalID: 1008626673
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_28
-      rect:
-        serializedVersion: 2
-        x: 763
-        y: 3
-        width: 211
-        height: 86
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2df9f0358ae790944b4019297deae9db
-      internalID: 1286983681
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_29
-      rect:
-        serializedVersion: 2
-        x: 982
-        y: 3
-        width: 211
-        height: 86
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 723660b979dc83042ac3b4f225c4eea8
-      internalID: 1697900692
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: InventoryButtonSpriteSheet_30
-      rect:
-        serializedVersion: 2
-        x: 1201
-        y: 3
-        width: 211
-        height: 86
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 94f3cc41060d2aa4e96ab5ff806bffea
-      internalID: 1820455307
+      spriteID: e3afa1185ac92d343963d9af5f19aced
+      internalID: -1380387887
       vertices: []
       indices: 
       edges: []
@@ -750,37 +637,30 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      InventoryButtonSpriteSheet_0: -1315746082
-      InventoryButtonSpriteSheet_1: -1167567550
-      InventoryButtonSpriteSheet_10: 551833800
-      InventoryButtonSpriteSheet_11: -642756711
-      InventoryButtonSpriteSheet_12: 402517345
-      InventoryButtonSpriteSheet_13: 1917799897
-      InventoryButtonSpriteSheet_14: 717983478
-      InventoryButtonSpriteSheet_15: 1869072511
-      InventoryButtonSpriteSheet_16: 1821027620
-      InventoryButtonSpriteSheet_17: 1323423206
-      InventoryButtonSpriteSheet_18: -780469015
-      InventoryButtonSpriteSheet_19: -1644968622
-      InventoryButtonSpriteSheet_2: -376015200
-      InventoryButtonSpriteSheet_20: -9995108
-      InventoryButtonSpriteSheet_21: 424873493
-      InventoryButtonSpriteSheet_22: -86704836
-      InventoryButtonSpriteSheet_23: 1351598366
-      InventoryButtonSpriteSheet_24: 1167186404
-      InventoryButtonSpriteSheet_25: 588267512
-      InventoryButtonSpriteSheet_26: -228254436
-      InventoryButtonSpriteSheet_27: 1008626673
-      InventoryButtonSpriteSheet_28: 1286983681
-      InventoryButtonSpriteSheet_29: 1697900692
-      InventoryButtonSpriteSheet_3: -454758782
-      InventoryButtonSpriteSheet_30: 1820455307
-      InventoryButtonSpriteSheet_4: -931035046
-      InventoryButtonSpriteSheet_5: -1937372426
-      InventoryButtonSpriteSheet_6: 890993349
-      InventoryButtonSpriteSheet_7: 1179829638
-      InventoryButtonSpriteSheet_8: -1673491851
-      InventoryButtonSpriteSheet_9: -1883894070
+      InventoryButtonSpriteSheet 1_0: 394675330
+      InventoryButtonSpriteSheet 1_1: 1519943361
+      InventoryButtonSpriteSheet 1_10: -1207110149
+      InventoryButtonSpriteSheet 1_11: 79627710
+      InventoryButtonSpriteSheet 1_12: 1930099842
+      InventoryButtonSpriteSheet 1_13: 1134263472
+      InventoryButtonSpriteSheet 1_14: 771929262
+      InventoryButtonSpriteSheet 1_15: 1392701685
+      InventoryButtonSpriteSheet 1_16: -650790500
+      InventoryButtonSpriteSheet 1_17: 1575258013
+      InventoryButtonSpriteSheet 1_18: -625463093
+      InventoryButtonSpriteSheet 1_19: -306863264
+      InventoryButtonSpriteSheet 1_2: -1596043415
+      InventoryButtonSpriteSheet 1_20: 1948573488
+      InventoryButtonSpriteSheet 1_21: -1193512229
+      InventoryButtonSpriteSheet 1_22: 1595888184
+      InventoryButtonSpriteSheet 1_23: -1380387887
+      InventoryButtonSpriteSheet 1_3: 731270928
+      InventoryButtonSpriteSheet 1_4: 679421310
+      InventoryButtonSpriteSheet 1_5: -95084371
+      InventoryButtonSpriteSheet 1_6: -1590674250
+      InventoryButtonSpriteSheet 1_7: -1064624440
+      InventoryButtonSpriteSheet 1_8: 315139750
+      InventoryButtonSpriteSheet 1_9: -1772385875
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
