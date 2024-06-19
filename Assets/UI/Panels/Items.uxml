@@ -4,37 +4,35 @@
         <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NotworkingButton" class="Interactable" style="position: absolute; top: 616px; left: 897px; background-image: url(&apos;project://database/Assets/Sprites/Enviorment/1_Hallway.png?fileID=2800000&amp;guid=a6b432d9cc9526f4a86bf58889d73880&amp;type=3#1_Hallway&apos;); height: 175px; width: 227px;" />
         <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="WorkingButton" class="Interactable" style="position: absolute; top: 580px; left: 108px; height: 57px; width: 79px;" />
     </ui:VisualElement>
-    <ui:VisualElement name="1Hallway" picking-mode="Ignore" style="flex-grow: 1; display: flex; background-image: url(&apos;project://database/Assets/Sprites/Enviorment/1_Hallway.png?fileID=2800000&amp;guid=a6b432d9cc9526f4a86bf58889d73880&amp;type=3#1_Hallway&apos;); position: relative;">
+    <ui:VisualElement name="1Hallway" picking-mode="Ignore" class="Container" style="flex-grow: 1; display: flex; background-image: url(&apos;project://database/Assets/Sprites/Enviorment/1_Hallway.png?fileID=2800000&amp;guid=a6b432d9cc9526f4a86bf58889d73880&amp;type=3#1_Hallway&apos;); position: relative;">
         <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="DoorLounge" class="Interactable" style="position: absolute; top: 214px; left: 458px; height: 559px; width: 258px; overflow: hidden; display: flex;" />
         <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="DoorMedbay" class="Interactable" style="position: absolute; top: 254px; left: 886px; background-color: rgb(255, 188, 188); display: flex; height: 329px; width: 128px;" />
         <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="DoorClosed" class="Interactable" style="position: absolute; top: 260px; left: 1107px; height: 286px; width: 111px; background-image: url(&apos;project://database/Assets/Sprites/Interactables/2Hallway/2_Hallway_Crew.png?fileID=21300000&amp;guid=651a5ba8ead836a4a8ee376db37f0c2f&amp;type=3#2_Hallway_Crew&apos;); display: flex;" />
         <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BrdigeGate" class="Interactable" style="position: absolute; top: 204px; left: 1329px; height: 317px; width: 316px; opacity: 1;" />
     </ui:VisualElement>
-    <ui:VisualElement name="2Hallway" picking-mode="Ignore" style="flex-grow: 1; display: none; position: relative;">
+    <ui:VisualElement name="2Hallway" picking-mode="Ignore" class="Container" style="flex-grow: 1; display: none; position: relative;">
         <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CrewDoor" class="Interactable" style="position: absolute; top: 214px; left: 458px; height: 559px; width: 258px;" />
         <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CoCaptainDoor" class="Interactable" style="position: absolute; top: 254px; left: 886px; background-color: rgb(255, 188, 188); display: flex; height: 329px; width: 128px;" />
         <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CaptainDoor" class="Interactable" style="position: absolute; top: 274px; left: 1114px; height: 275px; width: 111px;" />
         <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Hallway1Door" class="Interactable" style="position: absolute; top: 204px; left: 1329px; height: 317px; width: 316px; opacity: 1;" />
     </ui:VisualElement>
-    <ui:VisualElement name="Captian" picking-mode="Ignore" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Sprites/Interactables/Captian/CaptianQuatier_Hero.png?fileID=2800000&amp;guid=084cc334a0a5d1a499e124ab9df10585&amp;type=3#CaptianQuatier_Hero&apos;); display: none; position: relative; background-color: rgba(0, 0, 0, 0);">
+    <ui:VisualElement name="Captian" picking-mode="Ignore" class="Container" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Sprites/Interactables/Captian/CaptianQuatier_Hero.png?fileID=2800000&amp;guid=084cc334a0a5d1a499e124ab9df10585&amp;type=3#CaptianQuatier_Hero&apos;); display: none; position: relative; background-color: rgba(0, 0, 0, 0);">
         <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Heroin" class="Interactable" style="top: 664px; left: 1630px; width: 80px; height: 79px;" />
     </ui:VisualElement>
-    <ui:VisualElement name="CoCaptain" picking-mode="Ignore" style="flex-grow: 1; position: relative; display: none; background-image: url(&apos;project://database/Assets/Sprites/Interactables/CoCaptian/CoCaptianQuatier_note.png?fileID=2800000&amp;guid=b4d8fd3960c74a74a84d96895b08ce9e&amp;type=3#CoCaptianQuatier_note&apos;);">
+    <ui:VisualElement name="CoCaptain" picking-mode="Ignore" class="Container" style="flex-grow: 1; position: relative; display: none; background-image: url(&apos;project://database/Assets/Sprites/Interactables/CoCaptian/CoCaptianQuatier_note.png?fileID=2800000&amp;guid=b4d8fd3960c74a74a84d96895b08ce9e&amp;type=3#CoCaptianQuatier_note&apos;);">
         <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Note" class="Interactable" style="top: 267px; left: 232px; width: 89px;" />
     </ui:VisualElement>
-    <ui:VisualElement name="CrewRoom" style="flex-grow: 1; display: none;">
+    <ui:VisualElement name="CrewRoom" class="Container" style="flex-grow: 1; display: none;">
         <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Locker" class="Interactable" style="top: 309px; left: 78px; width: 64px; height: 603px;" />
     </ui:VisualElement>
-    <ui:VisualElement name="LoungeRoom" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Sprites/Interactables/Lounge/Lounge_medNotes.png?fileID=2800000&amp;guid=86b04c42d1afc9746814ac840c028d4c&amp;type=3#Lounge_medNotes&apos;); display: none;">
+    <ui:VisualElement name="LoungeRoom" class="Container" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Sprites/Interactables/Lounge/Lounge_medNotes.png?fileID=2800000&amp;guid=86b04c42d1afc9746814ac840c028d4c&amp;type=3#Lounge_medNotes&apos;); display: none;">
         <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LoungeNotes" class="Interactable" style="top: 713px; left: 911px; height: 50px; width: 149px;" />
     </ui:VisualElement>
-    <ui:VisualElement name="Medbay" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Sprites/Interactables/Medbay/Medbay_phiole.png?fileID=2800000&amp;guid=d185dd9561a418d4284e6daf959f8757&amp;type=3#Medbay_phiole&apos;); display: none;">
+    <ui:VisualElement name="Medbay" class="Container" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Sprites/Interactables/Medbay/Medbay_phiole.png?fileID=2800000&amp;guid=d185dd9561a418d4284e6daf959f8757&amp;type=3#Medbay_phiole&apos;); display: none;">
         <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="MedbayLocker" class="Interactable" style="top: 589px; left: 67px; width: 41px; height: 62px;" />
     </ui:VisualElement>
-    <ui:VisualElement name="OxygenRoomBook" style="flex-grow: 1; position: absolute; width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/Sprites/Interactables/Oxygen/Oxygenrooom_book_item.png?fileID=2800000&amp;guid=8d1dd6a78dca050448434ff0f6d8d58d&amp;type=3#Oxygenrooom_book_item&apos;); display: none;">
+    <ui:VisualElement name="OxygenRoomBook" class="Container" style="flex-grow: 1; position: absolute; width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/Sprites/Interactables/Oxygen/Oxygenrooom_book_item.png?fileID=2800000&amp;guid=8d1dd6a78dca050448434ff0f6d8d58d&amp;type=3#Oxygenrooom_book_item&apos;); display: none;">
         <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Book" class="Interactable" style="top: 514px; left: 1305px; height: 127px; width: 164px;" />
-    </ui:VisualElement>
-    <ui:VisualElement name="OxyigenRoomCodePad" style="flex-grow: 1; position: absolute; width: 100%; height: 100%; background-image: url(&apos;project://database/Assets/Sprites/Interactables/Oxygen/Oxygenrooom_interactable_codePad.png?fileID=2800000&amp;guid=49bdb77a150f2204d801bb1478b47a4d&amp;type=3#Oxygenrooom_interactable_codePad&apos;); display: none;">
         <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CodePad" class="Interactable" style="top: 513px; left: 1783px; width: 59px; height: 71px;" />
     </ui:VisualElement>
 </ui:UXML>
