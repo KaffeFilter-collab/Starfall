@@ -11,7 +11,7 @@ using Image = UnityEngine.UI.Image;
 
 public class Items : MonoBehaviour
 {
-    [SerializeField];
+        
     [SerializeField] private string itemName;
      private Vector3 currentpostion;
      [SerializeField] private GameController gameController;

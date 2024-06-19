@@ -141,6 +141,7 @@ namespace Managers
                     Debug.Log("bridge");
                     break;
                 case 1:
+                    firsthallway.style.display = DisplayStyle.Flex;
                     firsthallway.style.visibility = Visibility.Visible;
                     Debug.Log("2");
                     break;

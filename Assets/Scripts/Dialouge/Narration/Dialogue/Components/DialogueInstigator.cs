@@ -39,7 +39,7 @@ public class DialogueInstigator : MonoBehaviour
     {
         m_DialogueChannel.RaiseDialogueStart(dialogue);
 
-        m_CachedFlowState = FlowStateMachine.Instance.CurrentState;
+       // m_CachedFlowState = Flowstate.Instance.CurrentState;
         m_FlowChannel.RaiseFlowStateRequest(m_DialogueState);
     }
 
